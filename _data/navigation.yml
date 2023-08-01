@@ -1,6 +1,7 @@
-#- name: Blog
-#  link: /blog/
+
 - name: 关于
   link: /about/
+- name: 下载
+  link: /blog/
 - name: 联系小白羊
   link: /contact/
