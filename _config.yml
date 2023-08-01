@@ -1,7 +1,7 @@
 # ----
 # Site
 
-title: Frisco Template
+title: 小白羊网盘
 url: "https://brave-submarine.cloudvent.net"
 baseurl:
 google_analytics_key:
@@ -10,7 +10,7 @@ disqus_shortname:
 
 # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
-description: App marketing template for Jekyll.
+description: 小白羊网盘，一站式观影平台
 author:
   name:
   email:
