@@ -33,11 +33,11 @@
 		heroSection.style.backgroundImage = `url(${imageURL})`;
 	}
 
-	setInterval(changeBackgroundImage, 2000);
+	setInterval(changeBackgroundImage, 5000);
 
 
 	const backgroundImages1 = [
-		'../images/desktop/1.png',
+		'../images/desktop/xby.png',
 		'../images/desktop/2.png',
 		'../images/desktop/3.png',
 		'../images/desktop/4.png',
@@ -58,7 +58,7 @@
 		heroDesk.style.backgroundImage = `url(${imageURL})`;
 	}
 
-	setInterval(changeDeskBackgroundImage, 2000);
+	setInterval(changeDeskBackgroundImage, 5000);
 
 
 
