@@ -10,29 +10,54 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 			<h1 class="editable">小白羊网盘</h1>
 			<p class="subtext editable">Powered by 阿里云盘.</p>
 			<p class="subtext editable">多屏畅享，支持Android MacOs Windows Linux系统.</p>
-			<a href="{{ site.baseurl }}{% post_url 2024-03-18-privacy_policy %}" class="button">隐私政策</a>
+			<a href="{{ site.baseurl }}/privacy-policy" class="button">隐私政策</a>
+
 		</div>
 	</div>
 </section>
 
-<div class="privacy-policy-content">
-	{% for post in site.posts %}
-	{% if post.path contains 'privacy_policy' %}
-	{{ post.content | markdownify }}
-	{% endif %}
-	{% endfor %}
+<!-- privacy-policy.html (Privacy Policy page) -->
+---
+title: Privacy Policy
+permalink: /privacy-policy/
+layout: default
+---
+
+<div class="privacy-policy-page">
+	<div class="container">
+		<h1>Privacy Policy</h1>
+		<p class="last-updated">Updated: March 18, 2024</p>
+
+		<div class="policy-content">
+			{{ content }}
+		</div>
+	</div>
 </div>
-<!--<section class="pad">-->
-<!--	<div class="container">-->
-<!--		<p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>-->
-<!--		<ul class="staff">-->
-<!--			{% for person in site.staff_members %}-->
-<!--				<li>-->
-<!--					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>-->
-<!--					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>-->
-<!--					<div class="position">{{ person.position }}</div>-->
-<!--				</li>-->
-<!--			{% endfor %}-->
-<!--		</ul>-->
-<!--	</div>-->
+
+<!-- Add this to your CSS file -->
+<style>
+	.privacy-policy-page {
+		padding: 60px 0;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.privacy-policy-page .container {
+		padding: 0 20px;
+	}
+
+	.privacy-policy-page h1 {
+		font-size: 2.5em;
+		margin-bottom: 20px;
+	}
+
+	.privacy-policy-page .last-updated {
+		color: #666;
+		margin-bottom: 40px;
+	}
+
+	.privacy-policy-page .policy-content {
+		line-height: 1.6;
+	}
+</style>
 </section>

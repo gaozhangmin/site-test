@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: privacy-policy
 title: Privacy Policy
-date: 2024-03-18
-categories: []
+permalink: /privacy-policy/
 ---
 
 # Privacy Policy
