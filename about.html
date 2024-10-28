@@ -10,11 +10,18 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 			<h1 class="editable">小白羊网盘</h1>
 			<p class="subtext editable">Powered by 阿里云盘.</p>
 			<p class="subtext editable">多屏畅享，支持Android MacOs Windows Linux系统.</p>
-			<a href="{{ site.baseurl }}{% link _posts/privacy_policy.md %}" class="button">隐私政策</a>
+			<a href="{{ site.baseurl }}{% post_url 2024-03-18-privacy_policy %}" class="button">隐私政策</a>
 		</div>
 	</div>
 </section>
 
+<div class="privacy-policy-content">
+	{% for post in site.posts %}
+	{% if post.path contains 'privacy_policy' %}
+	{{ post.content | markdownify }}
+	{% endif %}
+	{% endfor %}
+</div>
 <!--<section class="pad">-->
 <!--	<div class="container">-->
 <!--		<p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>-->
