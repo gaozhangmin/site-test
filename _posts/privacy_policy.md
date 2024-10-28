@@ -1,3 +1,8 @@
+---
+layout: page
+title: Privacy Policy
+---
+
 # Privacy Policy
 
 *Updated: March 18, 2024*
