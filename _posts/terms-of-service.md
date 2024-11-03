@@ -1,7 +1,7 @@
 ---
-layout: termsOfUse
+layout: terms-of-use
 title: Terms of Use
-permalink: /termsOfUse/
+permalink: /terms-of-use/
 ---
 
 # Terms and Conditions
