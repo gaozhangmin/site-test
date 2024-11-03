@@ -1,0 +1,116 @@
+---
+title: XVideo Hub
+description: XVideo Hub
+image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
+---
+
+
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XVideo Hub - 强大的视频播放器</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-black text-white">
+<nav class="bg-gray-900 fixed w-full z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+                <a href="/" class="text-xl font-bold text-purple-500">XVideo Hub</a>
+            </div>
+            <div class="hidden md:block">
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-300 hover:text-white">主页</a>
+                    <a href="/download" class="text-gray-300 hover:text-white">下载</a>
+                    <a href="/about" class="text-gray-300 hover:text-white">关于</a>
+                    <a href="/contact" class="text-gray-300 hover:text-white">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="pt-24 pb-12 px-4">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">XVideo Hub</h1>
+        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
+            强大的视频播放器，支持几乎所有视频格式，为您带来极致观影体验
+        </p>
+    </div>
+</header>
+
+<main class="container mx-auto px-4">
+    <section class="grid md:grid-cols-2 gap-12 py-12">
+        <div class="space-y-6">
+            <h2 class="text-3xl font-bold">功能特点</h2>
+            <ul class="space-y-4 text-gray-300">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    支持多种视频格式：MP4, MKV, AVI等
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    4K HDR 播放支持
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    支持网络存储设备播放
+                </li>
+            </ul>
+        </div>
+        <div x-data="{ activeSlide: 0, slides: ['1.png', '2.png', '3.png','4.png', '5.png', '6.png','7.png', '8.png'] }"
+             x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
+             class="relative w-full h-64">
+
+            <!-- Image Carousel -->
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="activeSlide === index" class="absolute inset-0 transition-opacity duration-700">
+                    <img :src="`${{ site.baseurl }}/images/xvideo/${slide}`"
+                         alt="Carousel Image"
+                         class="rounded-lg shadow-2xl w-full h-full object-cover"/>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <section class="py-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">媒体支持</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">视频格式</h3>
+                <p class="text-gray-400">MP4, MKV, AVI, MOV, FLV, M4V, WMV等</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">音频格式</h3>
+                <p class="text-gray-400">AAC, AC3, DTS, MP3, FLAC等</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">字幕格式</h3>
+                <p class="text-gray-400">SRT, ASS, SSA, SUB等</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 text-center">
+        <h2 class="text-3xl font-bold mb-8">现在开始</h2>
+        <a href="/download" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700 transition-colors">
+            立即下载
+        </a>
+    </section>
+</main>
+
+<footer class="bg-gray-900 py-8 mt-12">
+    <div class="container mx-auto px-4 text-center text-gray-400">
+        <p>&copy; 2024 XVideo Hub. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
