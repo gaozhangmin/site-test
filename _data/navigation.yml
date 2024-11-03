@@ -1,12 +1,12 @@
 - name: 主页
   link: /
-- name: XVideo Hub
-  link: /xvideo-hub/
-- name: 下载
-  link: /download/
-- name: 关于
-  link: /about/
-- name: 联系小白羊
-  link: /contact/
-- name: 影视源地址
-  link: /msource/
+- name: 小白羊网盘
+  link: /xby-drive/
+#- name: 下载
+#  link: /download/
+#- name: 关于
+#  link: /about/
+#- name: 联系小白羊
+#  link: /contact/
+#- name: 影视源地址
+#  link: /msource/
