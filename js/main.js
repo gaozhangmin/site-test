@@ -41,7 +41,7 @@
 	// 	'../images/desktop/2.png',
 	// 	'../images/desktop/3.png',
 	// 	'../images/desktop/4.png',
-	// 	'../images/desktop/5.png',
+	// 	'../images/desktop/4.png',
 	// 	'../images/desktop/6.png',
 	// 	'../images/desktop/7.png',
 	// 	'../images/desktop/8.png',
