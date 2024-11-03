@@ -64,9 +64,18 @@
                 </li>
             </ul>
         </div>
-        <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
-            <!-- 使用占位图片代替轮播图 -->
-            <img src="/api/placeholder/600/400" alt="Video Player Interface" class="w-full h-full object-cover"/>
+        <div x-data="{ activeSlide: 0, slides: ['1.png', '2.png', '3.png','4.png', '5.png', '6.png','7.png', '8.png'] }"
+             x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
+             class="relative w-full h-64">
+
+            <!-- 图像轮播 -->
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="activeSlide === index" class="absolute inset-0 transition-opacity duration-700">
+                    <img :src="'{{ site.baseurl }}/images/xvideo/' + slide"
+                         alt="Carousel Image"
+                         class="rounded-lg shadow-2xl w-full h-full object-cover"/>
+                </div>
+            </template>
         </div>
     </section>
 
