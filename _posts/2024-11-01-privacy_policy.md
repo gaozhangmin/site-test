@@ -5,8 +5,7 @@ permalink: /privacy-policy/
 ---
 
 # Privacy Policy
-
-*Updated: March 18, 2024*
+*Updated: November 1, 2024*
 
 We care deeply about your privacy, and generally believe your data is none of our business. To the extent that our website and apps can provide their functionality without requiring your personal info, we will avoid collecting any personal data from you. In the cases where we do collect data, we give you the ability to opt out whenever possible. More details on about what we collect and why can be found below.
 

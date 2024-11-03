@@ -5,12 +5,11 @@ left_links:
     link: /about/
   - name: Contact
     link: /contact/
-  - name: Terms and Conditions
+  - name: Terms and Conditions/..
     link: /terms-and-conditions/
   - name:  Privacy Policy
     link: /privacy-policy/
 right_links:
-#  - name:
 #    link: https://facebook.com/cloudcannon
 #    new_window: true
 #    social_icon: Facebook
