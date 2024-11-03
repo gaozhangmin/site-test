@@ -1,16 +1,11 @@
----
-title: XVideo Hub
-description: XVideo Hub
-image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
----
-
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XVideo Hub - 强大的视频播放器</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-black text-white">
 <!-- 导航栏 -->
@@ -18,16 +13,16 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
     <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
-                <a href="{{ site.baseurl }}/" class="text-xl font-bold text-purple-500">XVideo Hub</a>
+                <a href="/" class="text-xl font-bold text-purple-500">XVideo Hub</a>
             </div>
-<!--            <div class="hidden md:block">-->
-<!--                <div class="flex items-center space-x-4">-->
-<!--                    <a href="{{ site.baseurl }}/" class="text-gray-300 hover:text-white">主页</a>-->
-<!--                    <a href="{{ site.baseurl }}/download" class="text-gray-300 hover:text-white">下载</a>-->
-<!--                    <a href="{{ site.baseurl }}/about" class="text-gray-300 hover:text-white">关于</a>-->
-<!--                    <a href="{{ site.baseurl }}/contact" class="text-gray-300 hover:text-white">联系我们</a>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="hidden md:block">
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-300 hover:text-white">主页</a>
+                    <a href="/download" class="text-gray-300 hover:text-white">下载</a>
+                    <a href="/about" class="text-gray-300 hover:text-white">关于</a>
+                    <a href="/contact" class="text-gray-300 hover:text-white">联系我们</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -44,6 +39,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 
 <!-- 主内容区域 -->
 <main class="container mx-auto px-4">
+    <!-- 功能特点和轮播图部分 -->
     <section class="grid md:grid-cols-2 gap-12 py-12">
         <div class="space-y-6">
             <h2 class="text-3xl font-bold">功能特点</h2>
@@ -68,18 +64,9 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
                 </li>
             </ul>
         </div>
-        <div x-data="{ activeSlide: 0, slides: ['1.png', '2.png', '3.png','4.png', '5.png', '6.png','7.png', '8.png'] }"
-             x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
-             class="relative w-full h-64">
-
-            <!-- 图像轮播 -->
-            <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="activeSlide === index" class="absolute inset-0 transition-opacity duration-700">
-                    <img :src="'{{ site.baseurl }}/images/xvideo/' + slide"
-                         alt="Carousel Image"
-                         class="rounded-lg shadow-2xl w-full h-full object-cover"/>
-                </div>
-            </template>
+        <div class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
+            <!-- 使用占位图片代替轮播图 -->
+            <img src="/api/placeholder/600/400" alt="Video Player Interface" class="w-full h-full object-cover"/>
         </div>
     </section>
 
@@ -102,10 +89,10 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
         </div>
     </section>
 
-    <!-- 立即下载按钮 -->
+    <!-- 下载按钮 -->
     <section class="py-12 text-center">
         <h2 class="text-3xl font-bold mb-8">现在开始</h2>
-        <a href="{{ site.baseurl }}/download" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700 transition-colors">
+        <a href="/download" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700 transition-colors">
             立即下载
         </a>
     </section>
@@ -115,6 +102,12 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 <footer class="bg-gray-900 py-8 mt-12">
     <div class="container mx-auto px-4 text-center text-gray-400">
         <p>&copy; 2024 XVideo Hub. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="/about" class="hover:text-white">关于</a>
+            <a href="/contact" class="hover:text-white">联系我们</a>
+            <a href="/terms" class="hover:text-white">使用条款</a>
+            <a href="/privacy" class="hover:text-white">隐私政策</a>
+        </div>
     </div>
 </footer>
 </body>
