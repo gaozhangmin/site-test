@@ -77,7 +77,7 @@
                 ]
             }"
              x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
-             class="relative aspect-w-1 aspect-h-2 bg-gray-800 rounded-lg overflow-hidden">
+             class="relative aspect-w-1 aspect-h-2 bg-gray-800 rounded-lg">
             <template x-for="(slide, index) in slides" :key="index">
                 <div
                         x-show="activeSlide === index"
@@ -92,8 +92,7 @@
                     <img
                             :src="slide"
                             :alt="'界面预览 ' + (index + 1)"
-                            class="w-full h-full object-cover rounded-lg"
-                    />
+                            class="w-full h-full object-contain rounded-lg"/>
                 </div>
             </template>
 
