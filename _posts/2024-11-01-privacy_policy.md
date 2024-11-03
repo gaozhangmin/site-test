@@ -86,7 +86,7 @@ If you are from the European Economic Area (EEA), 小白羊 legal basis for coll
 
 Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.
 
-If you are located outside United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.
+If you are located outside the United States and choose to provide information to us, please note that we transfer the data, including Personal Data, to United States and process it there.
 
 ## Disclosure Of Data
 
@@ -156,4 +156,4 @@ We may update our Privacy Policy from time to time. We will notify you of any ch
 
 If you have any questions about this Privacy Policy, you can contact us:
 
-zhangao456@proton.me
+gaozhangmin@gmail.com

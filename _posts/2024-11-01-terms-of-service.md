@@ -1,3 +1,8 @@
+---
+title: Terms and Conditions
+permalink: /terms-and-conditions/
+layout: default
+---
 # Terms and Conditions
 
 These terms and conditions ("Terms", "Agreement") are an agreement between Mobile Application Developer ("Mobile Application Developer", "us", "we" or "our") and you ("User", "you" or "your"). This Agreement sets forth the general terms and conditions of your use of the Speed Test Master mobile application and any of its products or services (collectively, "Mobile Application" or "Services").
@@ -60,7 +65,7 @@ You acknowledge that you have read this Agreement and agree to all its terms and
 ## Contacting Us
 
 If you have any questions about this Agreement, please Contact Us.
-
+gaozhangmin@gmail.com
 ---
 
 *This document was last updated on Feb 6, 2023.*
