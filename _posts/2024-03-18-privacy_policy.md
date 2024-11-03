@@ -10,7 +10,7 @@ permalink: /privacy-policy/
 
 We care deeply about your privacy, and generally believe your data is none of our business. To the extent that our website and apps can provide their functionality without requiring your personal info, we will avoid collecting any personal data from you. In the cases where we do collect data, we give you the ability to opt out whenever possible. More details on about what we collect and why can be found below.
 
-小白羊 ("us", "we", or "our") operates the https://xbysite.pages.dev website and the 小白羊® application (the "Service").
+小白羊 ("us", "we", or "our"， "XVideo Hub“) operates the https://xbysite.pages.dev website and the 小白羊® application (the "Service").
 
 We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
 
