@@ -78,7 +78,7 @@
                 ]
             }"
              x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
-             class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
+             class="relative w-full h-[2048px] bg-gray-800 rounded-lg overflow-hidden">
             <template x-for="(slide, index) in slides" :key="index">
                 <div
                         x-show="activeSlide === index"
