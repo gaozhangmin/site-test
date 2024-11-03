@@ -64,18 +64,64 @@
                 </li>
             </ul>
         </div>
-        <div x-data="{ activeSlide: 0, slides: ['1.png', '2.png', '3.png','4.png', '5.png', '6.png','7.png', '8.png'] }"
+        <div x-data="{
+                activeSlide: 0,
+                slides: [
+                    '/images/xvideo/1.png',
+                    '/images/xvideo/2.png',
+                    '/images/xvideo/3.png',
+                    '/images/xvideo/4.png',
+                    '/images/xvideo/5.png',
+                    '/images/xvideo/6.png',
+                    '/images/xvideo/7.png',
+                    '/images/xvideo/8.png'
+                ]
+            }"
              x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 3000)"
-             class="relative w-full h-64">
-
-            <!-- 图像轮播 -->
+             class="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden">
             <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="activeSlide === index" class="absolute inset-0 transition-opacity duration-700">
-                    <img :src="'{{ site.baseurl }}/images/xvideo/' + slide"
-                         alt="Carousel Image"
-                         class="rounded-lg shadow-2xl w-full h-full object-cover"/>
+                <div
+                        x-show="activeSlide === index"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100"
+                        x-transition:leave-end="opacity-0"
+                        class="absolute inset-0"
+                >
+                    <img
+                            :src="slide"
+                            :alt="'界面预览 ' + (index + 1)"
+                            class="w-full h-full object-cover rounded-lg"
+                    />
                 </div>
             </template>
+
+            <!-- 轮播控制按钮 -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button
+                            @click="activeSlide = index"
+                            :class="{'bg-purple-500': activeSlide === index, 'bg-gray-400': activeSlide !== index}"
+                            class="w-2 h-2 rounded-full transition-colors duration-200"
+                    ></button>
+                </template>
+            </div>
+
+            <!-- 添加前进/后退按钮 -->
+            <button
+                    @click="activeSlide = (activeSlide - 1 + slides.length) % slides.length"
+                    class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75"
+            >
+                ←
+            </button>
+            <button
+                    @click="activeSlide = (activeSlide + 1) % slides.length"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full p-2 hover:bg-opacity-75"
+            >
+                →
+            </button>
         </div>
     </section>
 
