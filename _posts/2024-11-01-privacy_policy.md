@@ -107,13 +107,11 @@ XVideo Hub may disclose your Personal Data in the good faith belief that such ac
 
 The security of your data is a priority for us, and we use advanced security measures to protect your information. However, please remember that no method of transmission over the Internet or method of electronic storage is completely secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security. Below are the specific measures we use to ensure data protection:
 
-Encryption: We use encryption protocols (such as TLS/SSL) to protect sensitive data (including payment information) during transmission. This ensures that data sent between your device and our servers remains secure.
+Encryption: We use encryption protocols (such as TLS/SSL) to protect sensitive data during transmission. This ensures that data sent between your device and our servers remains secure.
 
 Access Control: We limit access to Personal Data only to employees, contractors, and agents who need it to operate, develop, or improve our services. Authorized individuals are subject to strict confidentiality obligations and may be disciplined or terminated if they fail to meet these obligations.
 
 Data Minimization and Anonymization: Where possible, we minimize the amount of Personal Data we collect, store, and process. Additionally, some data is anonymized to reduce the risk of identification and misuse.
-
-Regular Audits and Assessments: We conduct regular audits of our data collection, storage, and processing practices to ensure compliance with data security standards and identify any vulnerabilities.
 
 Data Breach Response: In the event of a data breach, we have protocols in place to promptly notify affected users and relevant authorities as required by law. Our response plan includes steps to contain the breach, assess its impact, and implement corrective actions to prevent future incidents.
 
