@@ -10,7 +10,7 @@ These terms and conditions ("Terms", "Agreement") are an agreement between Mobil
 
 ## Google API Service
 
-The XVideo Hub App use and transfer of information received from Google APIs will adhere to Google API Services User Data Policy, including the Limited Use requirements.
+The VidFusion App use and transfer of information received from Google APIs will adhere to Google API Services User Data Policy, including the Limited Use requirements.
 
 ## Backups
 
