@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 基本SEO元标签 -->
+    <title>使用帮助 - 小白羊VidFusion视频管理工具</title>
+    <meta name="description" content="小白羊VidFusion是一款强大的视频管理工具，支持多平台播放、云端同步等功能。本页面提供详细的使用教程和帮助文档。">
+    <meta name="keywords" content="小白羊网盘,VidFusion,视频管理,媒体库,视频播放器,影片管理">
+
+    <!-- Open Graph标签 -->
+    <meta property="og:title" content="小白羊VidFusion使用帮助">
+    <meta property="og:description" content="小白羊VidFusion视频管理工具使用教程和帮助文档">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="小白羊VidFusion">
+    <meta property="og:image" content="/images/logo/img.png">
+
+    <!-- Twitter Card标签 -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="小白羊VidFusion使用帮助">
+    <meta name="twitter:description" content="小白羊VidFusion视频管理工具使用教程和帮助文档">
+    <meta name="twitter:image" content="/images/logo/img.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/help">
+
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/png" href="/images/logo/img.png">
+    <link rel="apple-touch-icon" href="/images/logo/img.png">
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "小白羊VidFusion",
+            "description": "一款强大的视频管理和播放工具，支持多平台使用",
+            "operatingSystem": "iOS, Android, Windows, macOS",
+            "applicationCategory": "MultimediaApplication",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "CNY"
+            }
+        }
+    </script>
+
+    <!-- 样式表 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <!-- 自定义CSS -->
+    <style>
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* 自定义字体渲染 */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+<!-- 顶部导航栏 -->
+<nav class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-3">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
+                <span class="font-bold">小白羊VidFusion</span>
+            </div>
+            <!-- 导航链接 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="hover:text-yellow-400">首页</a>
+                <a href="#" class="hover:text-yellow-400">下载</a>
+                <a href="/help" class="hover:text-yellow-400">使用帮助</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<main class="flex-grow">
+<div class="relative bg-gradient-to-r from-gray-900 to-gray-600 text-white py-20">
+    <div class="absolute inset-0">
+        <img src="/assets/images/help-banner.jpg" alt="Help Banner" class="w-full h-full object-cover opacity-30">
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold mb-4">VidFusion入门教程和使用指南</h1>
+
+    </div>
+</div>
+
+
+<!-- 内容区域 -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-16">
+
+        <!-- 入门教程 -->
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold border-b pb-2">入门教程</h2>
+                <ul class="space-y-6">
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            VidFusion介绍
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            VidFusion安装教程
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            VidFusion使用指南
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold border-b pb-2">文件源</h2>
+                <ul class="space-y-6">
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            挂载网盘
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            VidFusion文件命名规范
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            批量修改文件名
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-xl font-bold border-b pb-2">媒体库</h2>
+                <ul class="space-y-6">
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            媒体库使用指南
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
+                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+                            </svg>
+                            编辑影视剧元数据
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-gray-800 text-gray-300 py-4">
+    <div class="max-w-6xl mx-auto px-4">
+        <!-- 第一部分：顶部分栏 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <!-- 左侧Logo和社交 -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <img src="/images/logo/img.png" alt="小白羊VidFusion" class="w-8 h-8">
+                    <span class="font-bold text-lg text-white">小白羊 VidFusion</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <a href="#" class="flex items-center space-x-2 hover:text-white">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
+                        <span>小白羊drive</span>
+                    </a>
+                </div>
+                <!-- 微信二维码 -->
+                <div class="mt-4">
+                    <img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
+                    <p class="text-center text-white">扫码关注</p>
+                </div>
+                <p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">vidfusion@proton.me</a></p>
+            </div>
+
+            <!-- 产品 -->
+            <div>
+                <h3 class="font-bold text-lg text-white mb-2">产品</h3>
+                <ul class="space-y-2">
+                    <li><a href="/download" class="hover:text-white">下载</a></li>
+                </ul>
+            </div>
+
+            <!-- 公司 -->
+            <div>
+                <h3 class="font-bold text-lg text-white mb-2">公司</h3>
+                <ul class="space-y-2">
+                    <li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
+                    <li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

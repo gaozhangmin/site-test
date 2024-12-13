@@ -1,61 +1,133 @@
----
-title: Download
-description: 小白羊 下载.
----
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8X7ES1B4B"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-N8X7ES1B4B');
-	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-site-verification" content="f1VQn8dU20dgCYNT_WUUIFgVWlhQTsBBroaoXpBLH5c" />
-	<title>小白羊网盘</title>
+	<title>小白羊 - VidFusion下载</title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-
-<section class="hero" style="background-image: url(../images/download.png)">
-	<div class="container" >
-		<div class="row services-row services-row-head services-row-1" style="margin-top: 200px">
-			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
-				<div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-					<p class="services-icon"><span class="fa fa-android fa-5x"></span></p>
-					<h4 class="services-title">Android</h4>
-					<p class="services-more"><a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" style="color: lightseagreen">下载链接</a></p>
-				</div>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+<!-- 顶部导航栏 -->
+<nav class="bg-black text-white">
+	<div class="max-w-6xl mx-auto px-4">
+		<div class="flex justify-between py-10">
+			<!-- Logo -->
+			<div class="flex items-center space-x-2">
+				<img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
+				<span class="font-bold">小白羊 - VidFusion</span>
 			</div>
-
-			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
-				<div class="services-group wow animated fadeInLeft" data-wow-offset="40">
-					<p class="services-icon"><span class="fa fa-windows fa-5x"></span></p>
-					<h4 class="services-title">Windows</h4>
-					<p class="services-more"><a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" style="color: lightseagreen">下载链接</a></p>
-				</div>
+			<!-- 导航链接 -->
+			<div class="hidden md:flex space-x-10">
+				<a href="/" class="hover:text-yellow-400" title="返回主页">主页</a>
+				<a href="/xby-drive" class="hover:text-yellow-400" title="小白羊 Android">小白羊网盘</a>
+				<a href="/download" class="hover:text-yellow-400" title="立即下载 小白羊VidFusion">下载</a>
+				<a href="/msource" class="hover:text-yellow-400" title="获取影视源地址">影视源地址</a>
+				<a href="/help" class="hover:text-yellow-400">使用帮助</a>
 			</div>
 		</div>
-
-		<!-- Begin Services Row 2 -->
-		<div class="row services-row services-row-tail services-row-2">
-			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
-				<div class="services-group wow animated zoomIn" data-wow-offset="40">
-					<p class="services-icon"><i class="fa fa-apple fa-5x"></i></p>
-					<h4 class="services-title">MacOs</h4>
-					<p class="services-more"><a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" style="color: lightseagreen">下载链接</a></p>
-				</div>
+	</div>
+</nav>
+<main class="flex-grow">
+<!-- 下载页面内容 -->
+<section class="py-10">
+	<div class="max-w-4xl mx-auto text-center">
+		<h1 class="text-2xl font-bold mb-4">下载</h1>
+		<p class="text-gray-500 mb-8">下载所有设备的最新版本，享受随时随地观影</p>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+			<!-- iOS -->
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="iOS" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">iOS</h2>
+				<p class="text-gray-500 mb-4">支持 iOS 15 及以上系统</p>
+				<a href="#" class="text-blue-500 hover:underline">下载链接</a>
 			</div>
-			<div class="col-lg-6 col-md-4 col-sm-4 col-xs-12">
-				<div class="services-group wow animated zoomIn" data-wow-offset="40">
-					<p class="services-icon"><i class="fa fa-linux fa-5x"></i></p>
-					<h4 class="services-title">Linux</h4>
-					<p class="services-more"><a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" style="color: lightseagreen">下载链接</a></p>
-				</div>
+			<!-- Android -->
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">Android</h2>
+				<p class="text-gray-500 mb-4">支持 Android 5.0 及以上系统</p>
+				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
+			</div>
+			<!-- Android TV -->
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android TV" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">Android TV</h2>
+				<p class="text-gray-500 mb-4">支持 Android 5.0 及以上系统</p>
+				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
+			</div>
+<!--			&lt;!&ndash; Apple TV &ndash;&gt;-->
+<!--			<div class="bg-white shadow-md rounded-lg p-6 text-center">-->
+<!--				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Apple TV" class="w-12 h-12 mx-auto mb-4">-->
+<!--				<h2 class="text-lg font-semibold">Apple TV</h2>-->
+<!--				<p class="text-gray-500 mb-4">支持 tvOS 15 及以上系统</p>-->
+<!--				<a href="#" class="text-blue-500 hover:underline">下载链接</a>-->
+<!--			</div>-->
+			<!-- macOS -->
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">macOS</h2>
+				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
+			</div>
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">Linux</h2>
+				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
+			</div>
+			<div class="bg-white shadow-md rounded-lg p-6 text-center">
+				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
+				<h2 class="text-lg font-semibold">Windows</h2>
+				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
 			</div>
 		</div>
 	</div>
 </section>
+</main>
+<footer class="bg-gray-800 text-gray-300 py-4">
+	<div class="max-w-6xl mx-auto px-4">
+		<!-- 第一部分：顶部分栏 -->
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+			<!-- 左侧Logo和社交 -->
+			<div class="space-y-4">
+				<div class="flex items-center space-x-2">
+					<img src="/images/logo/img.png" alt="小白羊VidFusion" class="w-8 h-8">
+					<span class="font-bold text-lg text-white">小白羊 VidFusion</span>
+				</div>
+				<div class="flex items-center space-x-2">
+					<a href="#" class="flex items-center space-x-2 hover:text-white">
+						<img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
+						<span>小白羊drive</span>
+					</a>
+				</div>
+				<!-- 微信二维码 -->
+				<div class="mt-4">
+					<img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
+					<p class="text-center text-white">扫码关注</p>
+				</div>
+				<p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">vidfusion@proton.me</a></p>
+			</div>
+
+			<!-- 留空列 (使内容靠右) -->
+			<div></div>
+
+			<!-- 产品 -->
+			<div>
+				<h3 class="font-bold text-lg text-white mb-2">产品</h3>
+				<ul class="space-y-2">
+					<li><a href="/download" class="hover:text-white">下载</a></li>
+				</ul>
+			</div>
+
+			<!-- 公司 -->
+			<div>
+				<h3 class="font-bold text-lg text-white mb-2">公司</h3>
+				<ul class="space-y-2">
+					<li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
+					<li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

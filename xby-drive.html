@@ -1,205 +1,338 @@
----
-title: 小白羊网盘 - 支持Android TV macOS Windows Linux
-description: 小白羊网盘 - 支持Android TV macOS Windows Linux.
----
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8X7ES1B4B"></script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5912591035023032"
-			crossorigin="anonymous"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-N8X7ES1B4B');
-	</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-site-verification" content="f1VQn8dU20dgCYNT_WUUIFgVWlhQTsBBroaoXpBLH5c" />
-	<title>小白羊网盘</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<meta name="description" content="小白羊网盘支持多平台：Android TV、macOS、Windows和Linux。支持阿里云盘、Alist站点，4K影视播放与全网影视资源搜索，带来无缝观影体验。">
+	<title>小白羊网盘 - 跨平台多功能影视平台</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+	<style>
+		body {
+			background-color: #1a202c;
+			color: #ffffff;
+		}
+		.hero {
+			padding: 4rem 0;
+			background-color: #2d3748;
+		}
+		.info {
+			padding: 3rem 0;
+			background-color: #2d3748;
+			margin: 2rem 0;
+		}
+		.container.flex {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+		.text {
+			flex: 1;
+			padding: 2rem;
+		}
+		.image {
+			flex: 1;
+		}
+		.image img {
+			max-width: 100%;
+			border-radius: 8px;
+		}
+		nav {
+			background-color: #1a202c;
+		}
+		nav a {
+			color: #ffffff;
+		}
+		.cta.button.alt a {
+			display: inline-block;
+			padding: 0.75rem 1.5rem;
+			background-color: #4a5568;
+			color: #ffffff;
+			border-radius: 0.375rem;
+			text-decoration: none;
+			transition: background-color 0.3s;
+		}
+		.cta.button.alt a:hover {
+			background-color: #2d3748;
+		}
+	</style>
 </head>
-<section class="hero">
-	<div class="inner-hero text-container" style="margin-left: 100px">
-		<div class="hero-text-container" >
-			<h1 class="editable">小白羊TV </h1>
-			<h1 class="editable">一站式观影平台</h1>
-			<p class="subtext editable" >支持阿里云盘和指定影视源地址 定制你的观影体验.</p>
-			<div class="cta button alt"><a href="{{ site.baseurl }}/download/index.html">即刻下载体验</a></div>
+<body>
+<!-- 顶部导航栏 -->
+<nav>
+	<div class="max-w-6xl mx-auto px-4">
+		<div class="flex justify-between py-4">
+			<div class="flex items-center space-x-2">
+				<img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
+				<span class="font-bold text-white">小白羊VidFusion</span>
+			</div>
+			<div class="hidden md:flex space-x-10">
+				<a href="/" class="hover:text-yellow-400">主页</a>
+				<a href="/xby-drive" class="hover:text-yellow-400">小白羊网盘</a>
+				<a href="/download" class="hover:text-yellow-400">下载</a>
+				<a href="/msource" class="hover:text-yellow-400">影视源地址</a>
+				<a href="/help" class="hover:text-yellow-400">使用帮助</a>
+			</div>
 		</div>
 	</div>
-</section>
+</nav>
 
-<div class="content">
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">影视源</h2>
-				<p class="editable">小白羊TV影视版支持指定影视源，根据自己的喜好获取独家的观影平台.</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot18.png" alt="Screenshot" />
+<main>
+	<section class="hero">
+		<div class="container mx-auto px-4">
+			<div class="text-center">
+				<h1 class="text-4xl md:text-6xl font-bold mb-4">小白羊Android TV</h1>
+				<h2 class="text-2xl md:text-3xl text-gray-300 mb-6">一站式观影平台</h2>
+				<p class="text-xl max-w-3xl mx-auto text-gray-400 mb-8">
+					支持阿里云盘和指定影视源地址，定制你的观影体验。
+				</p>
+				<div class="cta button alt">
+					<a href="/download">即刻下载体验</a>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">阿里云盘</h2>
-				<p class="editable">小白羊TV影视版支持浏览观看阿里云盘内的视频，会员支持4K高清影视，观看不卡顿</p>
+	<!-- Features sections -->
+	<div class="content">
+		<!-- Text left, Image right -->
+		<section class="info">
+			<div class="container flex">
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">影视源</h2>
+					<p class="text-gray-300">小白羊TV影视版支持指定影视源，根据自己的喜好获取独家的观影平台。</p>
+				</div>
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/tv/screenshot18.png" alt="小白羊 影视源" />
+				</div>
 			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot16.png" alt="Screenshot" />
+		</section>
+
+		<!-- Text right, Image left -->
+		<section class="info">
+			<div class="container flex">
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/tv/screenshot16.png" alt="小白羊 阿里云盘" />
+				</div>
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">阿里云盘</h2>
+					<p class="text-gray-300">小白羊TV影视版支持浏览观看阿里云盘内的视频，会员支持4K高清影视，观看不卡顿</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Text left, Image right -->
+		<section class="info">
+			<div class="container flex">
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">AList挂载支持</h2>
+					<p class="text-gray-300">小白羊TV影视版支持添加Alist Weddav远程站点到本地，带来和本地文件一样的丝滑体验.</p>
+				</div>
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/tv/screenshot10.png" alt="小白羊 AList" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Continue the pattern for remaining sections -->
+		<section class="info">
+			<div class="container flex">
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/tv/screenshot13.png" alt="小白羊 影视资源搜索" />
+				</div>
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">全网影视资源搜索</h2>
+					<p class="text-gray-300">小白羊TV影视版支持搜索全网最新最热影视资源</p>
+				</div>
+			</div>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">影视字幕</h2>
+					<p class="text-gray-300">小白羊TV影视版支持多种字幕加载：网盘内字幕，网络字幕一键搜索加载</p>
+				</div>
+				<div class="image">
+					<img class="editable" src="/images/tv/screenshot22.png" alt="小白羊 影视字幕" />
+				</div>
+			</div>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="image">
+					<img class="editable" src="/images/tv/screenshot6.png" alt="小白羊 历史播放" />
+				</div>
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">历史播放</h2>
+					<p class="editable">小白羊TV影视版支持记录历史视频播放，无论是网盘视频还是影视源内在线观看记录</p>
+				</div>
+
+			</div>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">阿里云盘</h2>
+					<p class="text-gray-300">小白羊TV影视版支持浏览观看阿里云盘内的视频，会员支持4K高清影视，观看不卡顿</p>
+				</div>
+				<div class="image">
+					<img class="editable" src="/images/tv/screenshot16.png" alt="小白羊 阿里云盘" />
+				</div>
+			</div>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="image">
+					<img class="editable" src="/images/tv/screenshot16.png" alt="小白羊 阿里云盘" />
+				</div>
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">阿里云盘</h2>
+					<p class="text-gray-300">小白羊TV影视版支持浏览观看阿里云盘内的视频，会员支持4K高清影视，观看不卡顿</p>
+				</div>
+
+			</div>
+		</section>
+	</div>
+
+	<!-- Desktop version hero section -->
+	<section class="hero mt-16">
+		<div class="container mx-auto px-4">
+			<div class="text-center">
+				<h1 class="text-4xl md:text-6xl font-bold mb-4">小白羊桌面版本</h1>
+				<h2 class="text-2xl md:text-3xl text-gray-300 mb-6">跨平台支持</h2>
+				<p class="text-xl max-w-3xl mx-auto text-gray-400 mb-8">
+					多屏畅享 支持MacOs, Windows, Linux系统
+				</p>
+				<div class="cta button alt">
+					<a href="/download">即刻下载体验</a>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">Alist站点</h2>
-				<p class="editable">小白羊TV影视版支持添加Alist Weddav远程站点到本地，带来和本地文件一样的丝滑体验.</p>
+	<!-- Desktop features with alternating layout -->
+	<div class="content">
+		<!-- Text left, Image right -->
+		<section class="info">
+			<div class="container flex">
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">多系统支持</h2>
+					<p class="text-gray-300">小白羊桌面端支持MacOs，Windows，Linux系统。多屏畅享.</p>
+				</div>
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/desktop/1.png" alt="小白羊 多系统支持" />
+				</div>
 			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot10.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">全网影视资源搜索</h2>
-				<p class="editable">小白羊TV影视版支持搜索全网最新最热影视资源</p>
+		<!-- Text right, Image left -->
+		<section class="info">
+			<div class="container flex">
+				<div class="image w-1/2 p-4">
+					<img class="editable" src="/images/desktop/movie1.png" alt="小白羊 影院模式" />
+				</div>
+				<div class="text w-1/2 p-4">
+					<h2 class="text-2xl font-bold mb-4">影院模式</h2>
+					<p class="text-gray-300">自动为网盘内视频刮削影视元数据，包含海报，简介，评分，演员，导演等</p>
+				</div>
 			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot13.png" alt="Screenshot" />
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">视频播放器</h2>
+					<p class="text-gray-300">功能丰富的内置播放器，支持mpvm INNA等主流外部播放器</p>
+				</div>
+				<div class="image">
+					<img class="editable" src="/images/desktop/video.png" alt="小白羊 视频播放" />
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="image">
+					<img class="editable" src="/images/desktop/3.png" alt="小白羊 资源搜索" />
+				</div>
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">资源搜索</h2>
+					<p class="text-gray-300">小白羊桌面端支持应用内搜索全网网盘资源，应用内一键保存到网盘</p>
+				</div>
 
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">影视字幕</h2>
-				<p class="editable">小白羊TV影视版支持多种字幕加载：网盘内字幕，网络字幕一键搜索加载</p>
 			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot22.png" alt="Screenshot" />
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">4K影视</h2>
+					<p class="text-gray-300">小白羊桌面端内置全网4K高清影视，无需下载，一键观看</p>
+				</div>
+				<div class="image">
+					<img class="editable" src="/images/desktop/4.png" alt="小白羊 4K影视" />
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		<section class="info">
+			<div class="container flex">
+				<div class="image">
+					<img class="editable" src="/images/desktop/2.png" alt="小白羊 相册管理" />
+				</div>
+				<div class="text">
+					<h2 class="text-2xl font-bold mb-4">相册管理</h2>
+					<p class="text-gray-300">小白羊桌面端支持网盘内相册管理</p>
+				</div>
 
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">历史播放</h2>
-				<p class="editable">小白羊TV影视版支持记录历史视频播放，无论是网盘视频还是影视源内在线观看记录</p>
 			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/tv/screenshot6.png" alt="Screenshot" />
+		</section>
+	</div>
+</main>
+
+<footer class="bg-gray-800 text-gray-300 py-4">
+	<div class="max-w-6xl mx-auto px-4">
+		<!-- 第一部分：顶部分栏 -->
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+			<!-- 左侧Logo和社交 -->
+			<div class="space-y-4">
+				<div class="flex items-center space-x-2">
+					<img src="/images/logo/img.png" alt="小白羊VidFusion" class="w-8 h-8">
+					<span class="font-bold text-lg text-white">小白羊 VidFusion</span>
+				</div>
+				<div class="flex items-center space-x-2">
+					<a href="#" class="flex items-center space-x-2 hover:text-white">
+						<img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
+						<span>小白羊drive</span>
+					</a>
+				</div>
+				<!-- 微信二维码 -->
+				<div class="mt-4">
+					<img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
+					<p class="text-center text-white">扫码关注</p>
+				</div>
+				<p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">vidfusion@proton.me</a></p>
 			</div>
-		</div>
-	</section>
-</div>
 
+			<!-- 留空列 (使内容靠右) -->
+			<div></div>
 
+			<!-- 产品 -->
+			<div>
+				<h3 class="font-bold text-lg text-white mb-2">产品</h3>
+				<ul class="space-y-2">
+					<li><a href="/download" class="hover:text-white">下载</a></li>
+				</ul>
+			</div>
 
-<section class="hero-desktop">
-	<div class="inner-hero text-container" style="margin-right: 200px">
-		<div class="hero-text-container">
-			<h2 class="editable">小白羊桌面版本</h2>
-			<p class="subtext editable">多屏畅享 支持MacOs, Windows, Linux系统</p>
-			<div class="cta button alt"><a href="{{ site.baseurl }}/download/index.html">即刻下载体验</a></div>
+			<!-- 公司 -->
+			<div>
+				<h3 class="font-bold text-lg text-white mb-2">公司</h3>
+				<ul class="space-y-2">
+					<li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
+					<li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</section>
-
-<div class="content">
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">多系统支持</h2>
-				<p class="editable">小白羊桌面端支持MacOs，Windows，Linux系统。多屏畅享.</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/1.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">影院模式</h2>
-				<p class="editable">自动为网盘内视频刮削影视元数据，包含海报，简介，评分，演员，导演等</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/movie2.png" alt="Screenshot" />
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/movie1.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">视频播放</h2>
-				<p class="editable">功能丰富的内置播放器，支持mpvm INNA等主流外部播放器</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/video.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">资源搜索</h2>
-				<p class="editable">小白羊桌面端支持应用内搜索全网网盘资源，应用内一键保存到网盘</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/3.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">4K影视</h2>
-				<p class="editable">小白羊桌面端内置全网4K高清影视，无需下载，一键观看</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/4.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">丰富插件</h2>
-				<p class="editable">小白羊桌面端提供批量重命名，重复文件一键清理等丰富的网盘插件</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/6.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-
-	<section class="info">
-		<div class="container flex">
-			<div class="text">
-				<h2 class="editable">相册管理</h2>
-				<p class="editable">小白羊桌面端支持网盘内相册管理</p>
-			</div>
-			<div class="image">
-				<img class="editable" src="{{ site.baseurl }}/images/desktop/2.png" alt="Screenshot" />
-			</div>
-		</div>
-	</section>
-</div>
+</footer>
+</body>
+</html>

@@ -1,97 +1,50 @@
 <!DOCTYPE html>
-
 <html lang="en">
-	<head>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="聚合影片资源，智能识别影片信息，自动刮削封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。">
+	<meta name="author" content="'小白羊网盘VidFusion">
+	<meta name="google-site-verification" content="f1VQn8dU20dgCYNT_WUUIFgVWlhQTsBBroaoXpBLH5c" />
 
-			gtag('config', 'G-N8X7ES1B4B');
-		</script>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="{{ site.description }}">
-		<meta name="google-site-verification" content="f1VQn8dU20dgCYNT_WUUIFgVWlhQTsBBroaoXpBLH5c" />
-		<meta name="author" content="">
-		<!-- CSS -->
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-		<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
-		<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../assets/css/animate.min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="{{ site.baseurl }}/touch-icon.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
 
-		{% seo %}
-		{% feed_meta %}
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300|PT+Sans|Raleway|Lato:300|Rubik:300" rel="stylesheet">
 
-		<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/touch-icon.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
-		<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<!-- CSS Libraries -->
+	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/css/animate.min.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300|Rubik:300">
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCN1QPC67C"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-LCN1QPC67C');
+	</script>
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LCN1QPC67C"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+	<!-- Alpine.js -->
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-			gtag('config', 'G-LCN1QPC67C');
-		</script>
-	</head>
+	{% seo %}
+	{% feed_meta %}
+</head>
+<body>
 
-	<body>
-		<header id="mainHeader">
-			<div class="container" style="margin-top: 40px">
-				<div class="company-name">
-					<a href="{{ site.baseurl }}/">
-						<span class="dark-logo"><img src="{{ site.baseurl }}/images/logo/log2.png" alt="dark frisco logo"></span>
-					</a>
-				</div>
-				{% include navigation.html %}
-				<p class="editor-link"><a style="display:inline;" href="cloudcannon:collections/_data/navigation.yml" class="btn"><strong>&#9998;</strong> Edit navigation</a></p>
-			</div>
-		</header>
+<!-- Main Content -->
+<main>
+	{{ content }}
+</main>
 
-		{{ content }}
-
-		<footer>
-			<div class="container">
-				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
-				<ul class="footer-left-links">
-					{% for link in site.data.footer.left_links %}
-						<li>
-							<a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon | slugify }}-icon"{% endif %}>
-								{% if link.social_icon %}{% include social-icon.html icon=link.social_icon %}{% endif %}
-								{{ link.name }}
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-				<ul class="footer-right-links">
-					{% for link in site.data.footer.right_links %}
-						<li>
-							<a {% if link.new_window %}target="_blank"{% endif %} href="{% include relative-src.html src=link.link %}" {% if link.social_icon %}class="{{ link.social_icon | slugify }}-icon"{% endif %}>
-								{% if link.social_icon %}{% include social-icon.html icon=link.social_icon %}{% endif %}
-								{{ link.name }}
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-				<p class="copyright">
-					<a href="https://cloudcannon.com/">
-						Template by CloudCannon
-					</a>
-				</p>
-			</div>
-		</footer>
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script src="{{ site.baseurl }}/js/main.js"></script>
-	</body>
+<!-- Scripts -->
+<script defer src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script defer src="{{ site.baseurl }}/js/main.js"></script>
+</body>
 </html>

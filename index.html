@@ -1,66 +1,109 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N8X7ES1B4B"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5912591035023032" crossorigin="anonymous"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-N8X7ES1B4B');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="小白羊 VidFusion 是一款跨平台视频播放器，聚合影片资源，智能识别影片信息，自动刮削封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。">
+    <meta name="keywords" content="视频播放器, 4K HDR 播放, 跨平台播放器, 云存储播放器, VidFusion 聚合影片资源，智能识别影片信息，自动刮削封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。">
     <meta name="google-site-verification" content="f1VQn8dU20dgCYNT_WUUIFgVWlhQTsBBroaoXpBLH5c" />
-    <title>VidFusion - 强大的视频播放器</title>
+    <title>VidFusion - 聚合影片资源，智能识别影片信息，自动刮削封面海报，无需下载视频，流畅在线播放，跨平台跨设备同步，优雅打造私人影视库。</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            background-color: #1a202c;
+            color: #ffffff;
+        }
+        .hero {
+            padding: 4rem 0;
+            background-color: #2d3748;
+        }
+        .info {
+            padding: 3rem 0;
+            background-color: #2d3748;
+            margin: 2rem 0;
+        }
+        .container.flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .text {
+            flex: 1;
+            padding: 2rem;
+        }
+        .image {
+            flex: 1;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        nav {
+            background-color: #1a202c;
+        }
+        nav a {
+            color: #ffffff;
+        }
+        .cta.button.alt a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #4a5568;
+            color: #ffffff;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta.button.alt a:hover {
+            background-color: #2d3748;
+        }
+    </style>
 </head>
-<body class="bg-black text-white">
-<!-- 导航栏 -->
-<nav class="bg-gray-900 fixed w-full z-50">
-    <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-            <div class="flex items-center">
-                <a href="/" class="text-xl font-bold text-purple-500">VidFusion</a>
+<body class="text-white">
+<nav class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between py-10">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
+                <span class="font-bold">小白羊VidFusion</span>
             </div>
-            <div class="hidden md:block">
-                <div class="flex items-center space-x-4">
-                    <a href="/" class="text-gray-300 hover:text-white">主页</a>
-                    <a href="/download" class="text-gray-300 hover:text-white">下载</a>
-                    <a href="/msource" class="text-gray-300 hover:text-white">影视源地址</a>
-                    <a href="/about" class="text-gray-300 hover:text-white">关于</a>
-                    <a href="/contact" class="text-gray-300 hover:text-white">联系我们</a>
-                </div>
+            <!-- 导航链接 -->
+            <div class="hidden md:flex space-x-10">
+                <a href="/" class="hover:text-yellow-400" title="返回主页">主页</a>
+                <a href="/xby-drive" class="hover:text-yellow-400" title="小白羊 Android">小白羊网盘</a>
+                <a href="/download" class="hover:text-yellow-400" title="立即下载 小白羊VidFusion">下载</a>
+                <a href="/msource" class="hover:text-yellow-400" title="获取影视源地址">影视源地址</a>
+                <a href="/help" class="hover:text-yellow-400">使用帮助</a>
             </div>
         </div>
     </div>
 </nav>
-
-<!-- 头部 -->
-<header class="pt-24 pb-12 px-4">
-    <div class="container mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">VidFusion</h1>
-        <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-            强大的视频播放器，支持几乎所有视频格式，为您带来极致观影体验
-        </p>
-    </div>
-</header>
 
 <!-- 主内容区域 -->
 <main class="container mx-auto px-4">
     <!-- 功能特点和轮播图部分 -->
     <section class="grid md:grid-cols-2 gap-12 py-12">
         <div class="space-y-12">
-            <h2 class="text-6xl font-bold leading-tight">功能特点</h2>
+            <h2 class="text-6xl font-bold leading-tight">主要功能</h2>
             <ul class="space-y-8 text-gray-300 text-2xl leading-relaxed">
                 <li class="flex items-start">
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    跨平台支持：iPhone、iPad、Apple TV(开发中)、Mac(开发中)，支持AirPlay以及字幕功能
+                    苹果全家桶支持：iPhone、iPad、Apple TV(开发中)、Mac(开发中)，支持AirPlay以及字幕功能
                 </li>
                 <li class="flex items-start">
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,7 +144,6 @@
             </ul>
         </div>
 
-
         <div x-data="{
         activeSlide: 0,
         slides: [
@@ -134,8 +176,8 @@
                 >
                     <img
                             :src="slide"
-                            :alt="'界面预览 ' + (index + 1)"
-                            class="h-full w-auto max-w-full object-contain rounded-lg"/>
+                            :alt="'VidFusion 界面预览 ' + (index + 1)"
+                            class="h-full w-1500 object-contain rounded-lg"/>
                 </div>
             </template>
 
@@ -191,22 +233,55 @@
 
     <!-- 下载按钮 -->
     <section class="py-12 text-center">
-        <h2 class="text-3xl font-bold mb-8">现在开始</h2>
-        <a href="/download" class="inline-block bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700 transition-colors">
-            立即下载
+        <h2 class="text-3xl font-bold mb-8">立即下载</h2>
+        <a href="/download" class="bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700">
+            下载 VidFusion
         </a>
     </section>
 </main>
+<footer class="bg-gray-800 text-gray-300 py-4">
+    <div class="max-w-6xl mx-auto px-4">
+        <!-- 第一部分：顶部分栏 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <!-- 左侧Logo和社交 -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <img src="/images/logo/img.png" alt="小白羊VidFusion" class="w-8 h-8">
+                    <span class="font-bold text-lg text-white">小白羊 VidFusion</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <a href="#" class="flex items-center space-x-2 hover:text-white">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
+                        <span>小白羊drive</span>
+                    </a>
+                </div>
+                <!-- 微信二维码 -->
+                <div class="mt-4">
+                    <img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
+                    <p class="text-center text-white">扫码关注</p>
+                </div>
+                <p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">vidfusion@proton.me</a></p>
+            </div>
 
-<!-- 页脚 -->
-<footer class="bg-gray-900 py-8 mt-12">
-    <div class="container mx-auto px-4 text-center text-gray-400">
-        <p>&copy; 2024 VidFusion. All rights reserved.</p>
-        <div class="mt-4 space-x-4">
-            <a href="/about" class="hover:text-white">关于</a>
-            <a href="/contact" class="hover:text-white">联系我们</a>
-            <a href="/terms-and-conditions" class="hover:text-white">Terms of Use</a>
-            <a href="/privacy-policy" class="hover:text-white">Privacy Policy</a>
+            <!-- 留空列 (使内容靠右) -->
+            <div></div>
+
+            <!-- 产品 -->
+            <div>
+                <h3 class="font-bold text-lg text-white mb-2">产品</h3>
+                <ul class="space-y-2">
+                    <li><a href="/download" class="hover:text-white">下载</a></li>
+                </ul>
+            </div>
+
+            <!-- 公司 -->
+            <div>
+                <h3 class="font-bold text-lg text-white mb-2">公司</h3>
+                <ul class="space-y-2">
+                    <li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
+                    <li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </footer>

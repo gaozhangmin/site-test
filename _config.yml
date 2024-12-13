@@ -1,24 +1,15 @@
 # ----
 # Site
 encoding: utf-8
-title: 小白羊网盘
+title: 小白羊网盘VidFusion
 url: "https://xbysite.pages.dev"
 baseurl:
 google_analytics_key:
 google_maps_javascript_api_key:
 disqus_shortname:
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
 logo: /siteicon.png
 description: 小白羊网盘，一站式观影平台
-author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
-social:
-  name: Frisco Template
-  links:
-    - https://github.com/CloudCannon/frisco-jekyll-template
 
 # -----
 # Build
@@ -49,22 +40,12 @@ collections:
       permalink: /:collection/:name/
 
 paginate: 10
-paginate_path: "/download/:num/"
+paginate_path: "/blog/:num/"
 
 jekyll-archives:
   enabled: ['categories']
 
 defaults:
-  -
-    scope:
-      path: ""
-      type: "staff_members"
-    values:
-      _options:
-        image_path:
-          width: 440
-          height: 440
-          uploads_dir: "/images/staff_members"
   -
     scope:
       path: ""
@@ -103,22 +84,3 @@ defaults:
         width: 2000
         height: 1322
         resize_style: cover
-
-# -----------
-# CloudCannon
-
-social_icons:
-  - Facebook
-  - Google Plus
-  - Instagram
-  - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
-  - Email
-  - RSS
-
-_comments:
-  description: Text shown when sharing on social media
-  blurb: Short bio or description of this person
