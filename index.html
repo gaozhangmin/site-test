@@ -69,6 +69,14 @@
         .cta.button.alt a:hover {
             background-color: #2d3748;
         }
+        .app-store-button {
+            width: 250px; /* 调整按钮宽度 */
+            height: auto; /* 保持宽高比例 */
+        }
+
+        .app-store-button:hover {
+            opacity: 0.9; /* 鼠标悬停效果 */
+        }
     </style>
 </head>
 <body class="text-white">
@@ -234,8 +242,10 @@
     <!-- 下载按钮 -->
     <section class="py-12 text-center">
         <h2 class="text-3xl font-bold mb-8">立即下载</h2>
-        <a href="/download" class="bg-purple-600 text-white px-8 py-4 rounded-lg text-xl font-bold hover:bg-purple-700">
-            下载 BoxPlayer
+        <a href="https://apps.apple.com/app/id6739804060" target="_blank" class="inline-block">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                 alt="Download on the App Store"
+                 class="app-store-button">
         </a>
     </section>
 </main>
