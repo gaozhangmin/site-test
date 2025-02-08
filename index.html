@@ -129,7 +129,7 @@
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    多源播放：支持Emby、Jellyfin等媒体服务器
+                    多源播放：支持Emby、Jellyfin、 SMB、 WebDav、 Alist、NFS等媒体服务器
                 </li>
                 <li class="flex items-start">
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,13 +141,25 @@
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
+                    支持 STRM 刮削模式， 文件名支持tmdb id识别模式
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    支持iCloud 同步, Trakt 同步，支持多设备同步播放进度
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
                     字幕支持：兼容DVB、DVDSUB、MPL2、PGS、SMI、SSA/ASS、SRT等格式
                 </li>
                 <li class="flex items-start">
                     <svg class="w-6 h-6 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    高级功能：多音轨切换、手势操作、8倍放大、连续播放等
+                    高级功能：长按倍速播放 多音轨切换、手势操作、连续播放等
                 </li>
             </ul>
         </div>
@@ -155,12 +167,12 @@
         <div x-data="{
         activeSlide: 0,
         slides: [
-            '/images/xvideo/1.png',
-            '/images/xvideo/2.png',
+            '/images/xvideo/1.jpg',
+            '/images/xvideo/2.jpg',
             '/images/xvideo/3.jpg',
-            '/images/xvideo/4.png',
-            '/images/xvideo/5.png',
-            '/images/xvideo/6.png',
+            '/images/xvideo/4.jpg',
+            '/images/xvideo/5.jpg',
+            '/images/xvideo/6.jpg',
             '/images/xvideo/7.png',
             '/images/xvideo/8.png',
             '/images/xvideo/9.png',
@@ -235,6 +247,10 @@
             <div class="bg-gray-900 p-6 rounded-lg">
                 <h3 class="text-xl font-bold mb-4">字幕格式</h3>
                 <p class="text-gray-400">SRT, ASS, SSA, SUB等</p>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">数据同步</h3>
+                <p class="text-gray-400">iCloud， Trakt</p>
             </div>
         </div>
     </section>
