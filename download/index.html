@@ -1,133 +1,549 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>小白羊 - BoxPlayer下载</title>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="下载BoxPlayer跨平台视频播放器，支持iOS、Android、Apple TV、macOS、Windows、Linux多平台。免费下载，支持4K HDR播放。">
+    <meta name="keywords" content="BoxPlayer下载, 视频播放器下载, iOS播放器, Android播放器, Apple TV应用, macOS播放器, 免费下载">
+    <meta name="author" content="BoxPlayer Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xbysite.pages.dev/download.html">
+    <meta property="og:title" content="下载BoxPlayer - 跨平台视频播放器">
+    <meta property="og:description" content="免费下载BoxPlayer，支持iOS、Android、Apple TV、macOS等多平台的专业视频播放器">
+    <meta property="og:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+    <meta property="og:site_name" content="BoxPlayer">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xbysite.pages.dev/download.html">
+    <meta property="twitter:title" content="下载BoxPlayer - 跨平台视频播放器">
+    <meta property="twitter:description" content="免费下载BoxPlayer，支持多平台的专业视频播放器">
+    <meta property="twitter:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xbysite.pages.dev/download.html">
+
+    <!-- Performance optimization -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+    <title>下载BoxPlayer - 跨平台视频播放器 | 免费下载</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Download Page Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "下载BoxPlayer",
+        "description": "下载BoxPlayer跨平台视频播放器，支持iOS、Android、Apple TV、macOS等多平台",
+        "url": "https://xbysite.pages.dev/download.html",
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "BoxPlayer",
+            "operatingSystem": ["iOS", "macOS", "tvOS", "Android", "Windows", "Linux"],
+            "applicationCategory": "MultimediaApplication",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "BoxPlayer iOS版",
+                    "price": "0",
+                    "priceCurrency": "CNY",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://apps.apple.com/app/id6739804060"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- App Release Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "BoxPlayer",
+        "version": "1.3.6",
+        "datePublished": "2026-02-12",
+        "releaseNotes": "免费用户播放规则调整，新增双指手势操作，修复多项问题，提升播放器性能",
+        "downloadUrl": "https://apps.apple.com/app/id6739804060",
+        "operatingSystem": "iOS 14.0+",
+        "applicationCategory": "MultimediaApplication"
+    }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0f1c 0%, #162447 50%, #1f2937 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #06b6d4, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .platform-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .platform-card:hover::before {
+            left: 100%;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .platform-card.available:hover {
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .platform-card.coming-soon:hover {
+            box-shadow: 0 20px 40px rgba(107, 114, 128, 0.3);
+        }
+
+        nav {
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .beta-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        }
+
+        .available-badge {
+            background: linear-gradient(45deg, #10b981, #34d399);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .coming-soon-badge {
+            background: rgba(107, 114, 128, 0.8);
+            color: #d1d5db;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #6b7280;
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover .platform-icon {
+            transform: scale(1.1);
+            color: #06b6d4;
+        }
+
+        .platform-card.available:hover .platform-icon {
+            color: #10b981;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-<!-- 顶部导航栏 -->
-<nav class="bg-black text-white">
-	<div class="max-w-7xl mx-auto px-4">
-		<div class="flex justify-between py-7">
-			<!-- Logo -->
-			<div class="flex items-center space-x-2">
-				<img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
-				<span class="font-bold">小白羊 - BoxPlayer</span>
-			</div>
-			<!-- 导航链接 -->
-			<div class="hidden md:flex space-x-10">
-				<a href="/" class="hover:text-yellow-400" title="返回主页">主页</a>
-				<a href="/xby-drive" class="hover:text-yellow-400" title="小白羊 Android">小白羊网盘</a>
-				<a href="/download" class="hover:text-yellow-400" title="立即下载 小白羊BoxPlayer">下载</a>
-				<a href="/msource" class="hover:text-yellow-400" title="获取影视源地址">影视源地址</a>
-				<a href="/help" class="hover:text-yellow-400">使用帮助</a>
-			</div>
-		</div>
-	</div>
-</nav>
-<main class="flex-grow">
-<!-- 下载页面内容 -->
-<section class="py-10">
-	<div class="max-w-4xl mx-auto text-center">
-		<h1 class="text-2xl font-bold mb-4">下载</h1>
-		<p class="text-gray-500 mb-8">下载所有设备的最新版本，享受随时随地观影</p>
-		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-			<!-- iOS -->
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="iOS" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">iOS</h2>
-				<p class="text-gray-500 mb-4">支持 iOS 15 及以上系统</p>
-				<a href="#" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-			<!-- Android -->
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">Android</h2>
-				<p class="text-gray-500 mb-4">支持 Android 5.0 及以上系统</p>
-				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-			<!-- Android TV -->
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android TV" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">Android TV</h2>
-				<p class="text-gray-500 mb-4">支持 Android 5.0 及以上系统</p>
-				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-<!--			&lt;!&ndash; Apple TV &ndash;&gt;-->
-<!--			<div class="bg-white shadow-md rounded-lg p-6 text-center">-->
-<!--				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Apple TV" class="w-12 h-12 mx-auto mb-4">-->
-<!--				<h2 class="text-lg font-semibold">Apple TV</h2>-->
-<!--				<p class="text-gray-500 mb-4">支持 tvOS 15 及以上系统</p>-->
-<!--				<a href="#" class="text-blue-500 hover:underline">下载链接</a>-->
-<!--			</div>-->
-			<!-- macOS -->
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">macOS</h2>
-				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">Linux</h2>
-				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-			<div class="bg-white shadow-md rounded-lg p-6 text-center">
-				<img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="macOS" class="w-12 h-12 mx-auto mb-4">
-				<h2 class="text-lg font-semibold">Windows</h2>
-				<a href="https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c" class="text-blue-500 hover:underline">下载链接</a>
-			</div>
-		</div>
-	</div>
-</section>
-</main>
-<footer class="bg-gray-800 text-gray-300 py-4">
-	<div class="max-w-6xl mx-auto px-4">
-		<!-- 第一部分：顶部分栏 -->
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-			<!-- 左侧Logo和社交 -->
-			<div class="space-y-4">
-				<div class="flex items-center space-x-2">
-					<img src="/images/logo/img.png" alt="小白羊BoxPlayer" class="w-8 h-8">
-					<span class="font-bold text-lg text-white">小白羊 BoxPlayer</span>
-				</div>
-				<div class="flex items-center space-x-2">
-					<a href="#" class="flex items-center space-x-2 hover:text-white">
-						<img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
-						<span>小白羊drive</span>
-					</a>
-				</div>
-				<!-- 微信二维码 -->
-				<div class="mt-4">
-					<img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
-					<p class="text-center text-white">扫码关注</p>
-				</div>
-				<p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">BoxPlayer@proton.me</a></p>
-			</div>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg overflow-hidden">
+                        <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl gradient-text">BoxPlayer</h1>
+                        <p class="text-xs text-gray-400">跨平台视频播放器</p>
+                    </div>
+                </div>
 
-			<!-- 留空列 (使内容靠右) -->
-			<div></div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="hover:text-cyan-400 transition-colors">首页</a>
+                    <a href="/#features" class="hover:text-cyan-400 transition-colors">功能</a>
+                    <a href="/#platforms" class="hover:text-cyan-400 transition-colors">平台</a>
+                    <a href="./index.html" class="text-cyan-400">下载</a>
+                    <a href="./msource.html" class="hover:text-cyan-400 transition-colors">影视源地址配置</a>
+                    <a href="./help.html" class="hover:text-cyan-400 transition-colors">技术规格</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-			<!-- 产品 -->
-			<div>
-				<h3 class="font-bold text-lg text-white mb-2">产品</h3>
-				<ul class="space-y-2">
-					<li><a href="/download" class="hover:text-white">下载</a></li>
-				</ul>
-			</div>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 relative">
+        <!-- Breadcrumb -->
+        <nav class="absolute top-24 left-4 md:left-8" aria-label="breadcrumb">
+            <ol class="flex space-x-2 text-sm text-gray-400" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" class="hover:text-cyan-400 transition-colors" itemprop="item">
+                        <span itemprop="name">首页</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-500">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="text-cyan-400" itemprop="name">下载</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
 
-			<!-- 公司 -->
-			<div>
-				<h3 class="font-bold text-lg text-white mb-2">公司</h3>
-				<ul class="space-y-2">
-					<li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
-					<li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
+        <!-- Beta Badge -->
+        <div class="beta-badge absolute top-8 right-8">
+            公测版
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">
+                <span class="gradient-text">下载 BoxPlayer</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                选择您的平台，立即体验跨设备无缝播放的极致享受
+            </p>
+        </div>
+    </section>
+
+    <!-- Download Platforms -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
+
+                <!-- iOS -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://apps.apple.com/app/id6739804060', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">iOS</h3>
+                    <p class="text-sm text-gray-400 mb-4">iPhone & iPad</p>
+                    <div class="text-xs text-gray-500">
+                        <p>iOS 14.0+</p>
+                        <p>v1.3.6</p>
+                    </div>
+                </div>
+
+                <!-- Android -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Android</h3>
+                    <p class="text-sm text-gray-400 mb-4">手机 & 平板</p>
+                    <div class="text-xs text-gray-500">
+                        <p>Android 5.0+</p>
+                        <p>小白羊网盘版</p>
+                    </div>
+                </div>
+
+                <!-- Android TV -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Android TV</h3>
+                    <p class="text-sm text-gray-400 mb-4">智能电视</p>
+                    <div class="text-xs text-gray-500">
+                        <p>Android TV 5.0+</p>
+                        <p>小白羊网盘版</p>
+                    </div>
+                </div>
+
+                <!-- Apple TV -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Apple TV</h3>
+                    <p class="text-sm text-gray-400 mb-4">客厅大屏</p>
+                    <div class="text-xs text-gray-500">
+                        <p>tvOS 14.0+</p>
+                        <p>v1.0.6</p>
+                    </div>
+                </div>
+
+                <!-- macOS -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">macOS</h3>
+                    <p class="text-sm text-gray-400 mb-4">Mac 桌面</p>
+                    <div class="text-xs text-gray-500">
+                        <p>macOS 11.0+</p>
+                        <p>v1.0.6 小白羊网盘版</p>
+                    </div>
+                </div>
+
+                <!-- Windows -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Windows</h3>
+                    <p class="text-sm text-gray-400 mb-4">PC 桌面</p>
+                    <div class="text-xs text-gray-500">
+                        <p>Windows 10+</p>
+                        <p>小白羊网盘版</p>
+                    </div>
+                </div>
+
+                <!-- Linux -->
+                <div class="platform-card available glassmorphism rounded-3xl p-8 text-center relative"
+                     @click="window.open('https://workdrive.zohoexternal.jp/folder/2ty4ff979f9702403435995c592f8aff7b30c', '_blank')">
+                    <div class="available-badge">可用</div>
+                    <div class="platform-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Linux</h3>
+                    <p class="text-sm text-gray-400 mb-4">Linux 发行版</p>
+                    <div class="text-xs text-gray-500">
+                        <p>各种发行版</p>
+                        <p>小白羊网盘版</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Download Statistics -->
+            <div class="mt-16 text-center">
+                <div class="glassmorphism rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-6">下载统计</h3>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-3xl font-bold text-cyan-400 mb-2">10K+</div>
+                            <p class="text-gray-400">总下载量</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-green-400 mb-2">4.8</div>
+                            <p class="text-gray-400">App Store 评分</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-purple-400 mb-2">7</div>
+                            <p class="text-gray-400">支持平台</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Store Featured -->
+    <section class="py-16 bg-black/10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">
+                <span class="gradient-text">立即体验</span>
+            </h2>
+            <p class="text-gray-400 text-lg mb-12">加入数万用户，享受极致的跨平台视频播放体验</p>
+
+            <div class="glassmorphism rounded-3xl p-8 max-w-md mx-auto">
+                <div class="flex items-center justify-center mb-6">
+                    <img src="png/icon/blue.svg" alt="BoxPlayer" class="w-16 h-16 rounded-2xl mr-4">
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold">BoxPlayer</h3>
+                        <p class="text-gray-400">跨平台视频播放器 v1.3.6</p>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-400 text-sm ml-2">4.8 分</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://apps.apple.com/app/id6739804060" target="_blank"
+                   class="w-full py-4 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl text-white font-semibold text-lg inline-block mb-4 transition-all hover:scale-105">
+                    <i class="fab fa-apple mr-2"></i>
+                    App Store 下载
+                </a>
+
+                <p class="text-sm text-gray-500">免费下载，完整功能</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Release Notes -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">
+                <span class="gradient-text">版本更新</span>
+            </h2>
+
+            <div class="glassmorphism rounded-2xl p-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-3 h-3 bg-green-400 rounded-full mr-3"></div>
+                    <h3 class="text-xl font-bold">v1.3.6 iOS / v1.0.6 macOS & tvOS</h3>
+                    <span class="ml-auto text-gray-400">2026.02.12</span>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="border-l-2 border-yellow-500 pl-4">
+                        <h4 class="font-semibold text-yellow-400 mb-2">⚠️ 重要更新</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• 免费用户播放规则调整：每天可播放 5 次视频</li>
+                            <li>• 单次播放时长不足 5 分钟不计入播放次数</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-cyan-500 pl-4">
+                        <h4 class="font-semibold text-green-400 mb-2">✅ 新功能</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• <strong>双指手势操作</strong>：双指缩放视频画面</li>
+                            <li>• 双指长按并拖动以移动画面位置</li>
+                            <li>• 双指点击恢复视频原始大小</li>
+                            <li>• <strong>iOS专属</strong>：弹幕播放速度调节选项</li>
+                            <li>• 视频播放速度调节时，弹幕播放速度自动同步</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-blue-500 pl-4">
+                        <h4 class="font-semibold text-blue-400 mb-2">🔧 优化改进</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• 提升播放器整体性能与稳定性</li>
+                            <li>• 播放器界面交互优化</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-red-500 pl-4">
+                        <h4 class="font-semibold text-red-400 mb-2">🐛 问题修复</h4>
+                        <ul class="text-gray-300 space-y-1 text-sm">
+                            <li>• 修复媒体服务器环境下无法识别 ISO 格式视频的问题</li>
+                            <li>• 修复播放器加载界面关闭按钮无效的问题</li>
+                            <li>• 修复播放器跳转异常的问题</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg overflow-hidden">
+                            <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl gradient-text">BoxPlayer</h3>
+                            <p class="text-xs text-gray-400">跨平台视频播放器</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        专业级播放引擎，为您提供最佳的跨平台视频播放体验。
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">产品</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/" class="hover:text-white transition-colors">主页</a></li>
+                        <li><a href="/#features" class="hover:text-white transition-colors">功能特性</a></li>
+                        <li><a href="./index.html" class="hover:text-white transition-colors">下载应用</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">支持</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="./help.html" class="hover:text-white transition-colors">技术规格</a></li>
+                        <li><a href="/#faq" class="hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="mailto:support@boxplayer.app" class="hover:text-white transition-colors">联系支持</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 BoxPlayer. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
