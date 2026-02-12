@@ -1,0 +1,14 @@
+# Cloudflare Pages Redirects
+# Handle URLs with trailing slash
+/download/ /download.html 200
+/help/ /help.html 200
+/msource/ /msource.html 200
+
+# Handle clean URLs without trailing slash
+/download /download.html 200
+/help /help.html 200
+/msource /msource.html 200
+
+# Handle root path variations
+/index.html / 301
+/index / 301
