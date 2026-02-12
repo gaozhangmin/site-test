@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Force absolute URL resolution -->
+    <base href="https://xbysite.pages.dev/">
+
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N8X7ES1B4B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N8X7ES1B4B');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="获取小白羊TV影视源地址配置，一键复制影视源接口，支持多种影视资源平台。所有源均来自公开网络，合法合规使用。">
+    <meta name="keywords" content="影视源地址, 小白羊TV配置, 影视源接口, BoxPlayer影视源, TV盒子源, 影视资源配置, 播放器源地址">
+    <meta name="author" content="BoxPlayer Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xbysite.pages.dev/msource.html">
+    <meta property="og:title" content="影视源地址配置 - BoxPlayer">
+    <meta property="og:description" content="获取最新影视源地址，一键复制配置到小白羊TV，支持多种影视资源平台">
+    <meta property="og:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+    <meta property="og:site_name" content="BoxPlayer">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xbysite.pages.dev/msource.html">
+    <meta property="twitter:title" content="影视源地址配置 - BoxPlayer">
+    <meta property="twitter:description" content="获取最新影视源地址，一键复制配置">
+    <meta property="twitter:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xbysite.pages.dev/msource.html">
+
+    <title>影视源地址配置 - BoxPlayer小白羊TV源接口</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "影视源地址配置工具",
+        "description": "为小白羊TV配置影视源地址的在线工具，一键复制影视源接口",
+        "url": "https://xbysite.pages.dev/msource.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "featureList": [
+            "一键复制影视源地址",
+            "多种影视源支持",
+            "简单易用的界面",
+            "实时状态显示"
+        ]
+    }
+    </script>
+
+    <!-- HowTo Schema for configuration -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何配置影视源地址",
+        "description": "详细指导如何复制和配置小白羊TV的影视源地址",
+        "totalTime": "PT2M",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "复制地址",
+                "text": "点击任意影视源卡片复制地址到剪贴板"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "打开设置",
+                "text": "在小白羊TV应用中进入设置页面"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "粘贴使用",
+                "text": "粘贴地址到接口配置中即可生效"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ItemList Schema for sources -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "影视源地址列表",
+        "description": "可用的影视源地址配置选项",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "饭太硬",
+                "description": "优质影视资源平台"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "GitHub源",
+                "description": "开源影视资源接口"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "肥猫",
+                "description": "知名影视资源站"
+            }
+        ]
+    }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0f1c 0%, #162447 50%, #1f2937 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #06b6d4, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .source-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .source-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .source-card:hover::before {
+            left: 100%;
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, #06b6d4, #3b82f6);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .copy-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .copy-btn:hover::before {
+            left: 100%;
+        }
+
+        nav {
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg,
+                rgba(6, 182, 212, 0.1) 0%,
+                rgba(59, 130, 246, 0.1) 50%,
+                rgba(16, 185, 129, 0.1) 100%);
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #10b981, #34d399);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .source-status {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg overflow-hidden">
+                        <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl gradient-text">BoxPlayer</h1>
+                        <p class="text-xs text-gray-400">影视源地址配置</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="hover:text-cyan-400 transition-colors">首页</a>
+                    <a href="/#features" class="hover:text-cyan-400 transition-colors">功能</a>
+                    <a href="/#platforms" class="hover:text-cyan-400 transition-colors">平台</a>
+                    <a href="/download" class="hover:text-cyan-400 transition-colors">下载</a>
+                    <a href="/msource" class="text-cyan-400">影视源地址配置</a>
+                    <a href="/help" class="hover:text-cyan-400 transition-colors">技术规格</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center hero-gradient pt-20">
+        <!-- Breadcrumb -->
+        <nav class="absolute top-24 left-4 md:left-8" aria-label="breadcrumb">
+            <ol class="flex space-x-2 text-sm text-gray-400" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" class="hover:text-cyan-400 transition-colors" itemprop="item">
+                        <span itemprop="name">首页</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-500">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="text-cyan-400" itemprop="name">影视源地址配置</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-bold mb-6">
+                    <span class="gradient-text">影视源</span><br>
+                    <span class="text-white">地址配置</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+                    为小白羊TV配置专属影视源，享受海量影视资源，一键复制即可使用
+                </p>
+
+                <!-- Usage Instructions -->
+                <div class="glassmorphism rounded-2xl p-8 max-w-4xl mx-auto mb-12">
+                    <h2 class="text-2xl font-bold mb-6 gradient-text">使用说明</h2>
+                    <div class="grid md:grid-cols-3 gap-6 text-left">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-white font-bold text-sm">1</div>
+                            <div>
+                                <h3 class="font-semibold mb-2">复制地址</h3>
+                                <p class="text-gray-400 text-sm">点击下方任意影视源卡片复制地址到剪贴板</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">2</div>
+                            <div>
+                                <h3 class="font-semibold mb-2">打开设置</h3>
+                                <p class="text-gray-400 text-sm">在小白羊TV应用中进入设置页面</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-sm">3</div>
+                            <div>
+                                <h3 class="font-semibold mb-2">粘贴使用</h3>
+                                <p class="text-gray-400 text-sm">粘贴地址到接口配置中即可生效</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Source Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-data="{ copiedId: null }">
+                <!-- 饭太硬 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('http://www.饭太硬.com/tv/', '饭太硬')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '饭太硬' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-cyan-400">饭太硬</h3>
+                        <i class="fas fa-tv text-cyan-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">优质影视资源平台</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 影视源地址 - GitLab -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('https://jihulab.com/jinenge/tvbox/-/raw/main/1.json', 'gitlab')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === 'gitlab' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-yellow-400">影视源</h3>
+                        <i class="fab fa-gitlab text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">GitLab 托管影视源</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- GitHub 影视源 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('https://github.moeyy.xyz/https://raw.githubusercontent.com/PizazzGY/TVBox/main/api.json', 'github')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === 'github' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-green-400">GitHub源</h3>
+                        <i class="fab fa-github text-green-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">开源影视资源接口</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 纯一骚零 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('https://100km.top/0', '纯一骚零')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '纯一骚零' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-blue-400">纯一骚零</h3>
+                        <i class="fas fa-rocket text-blue-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">高速稳定影视源</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- OK屋炸天 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('http://ok321.top/tv', 'ok屋')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === 'ok屋' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-green-500">OK屋炸天</h3>
+                        <i class="fas fa-fire text-green-500"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">热门影视资源聚合</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 巧技 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('http://cdn.qiaoji8.com/tvbox.json', '巧技')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '巧技' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-purple-400">巧技</h3>
+                        <i class="fas fa-magic text-purple-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">技术优化影视源</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 云星日记 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('http://itvbox.cc/云星日记', '云星日记')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '云星日记' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-cyan-400">云星日记</h3>
+                        <i class="fas fa-star text-cyan-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">精选影视内容源</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 菜妮丝 XBPQ -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('https://tv.xn--yhqu5zs87a.top', '菜妮丝')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '菜妮丝' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-orange-400">菜妮丝 XBPQ</h3>
+                        <i class="fas fa-gem text-orange-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">专业影视播放源</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+
+                <!-- 肥猫 -->
+                <div class="source-card glassmorphism rounded-2xl p-6 relative"
+                     @click="copyToClipboard('http://肥猫.com', '肥猫')"
+                     :class="{ 'ring-2 ring-cyan-400': copiedId === '肥猫' }">
+                    <div class="source-status"></div>
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-cyan-400">肥猫</h3>
+                        <i class="fas fa-cat text-cyan-400"></i>
+                    </div>
+                    <p class="text-gray-400 mb-4 text-sm">知名影视资源站</p>
+                    <div class="copy-btn px-4 py-2 rounded-lg text-white font-medium text-center">
+                        <i class="fas fa-copy mr-2"></i>
+                        点击复制
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="glassmorphism rounded-2xl p-8 mt-16 max-w-4xl mx-auto text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-exclamation-triangle text-yellow-400 text-2xl mr-3"></i>
+                    <h3 class="text-xl font-bold">重要声明</h3>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    所有影视源均来源于公开网络，本站仅提供地址收集整理服务，不参与源站开发和维护。
+                    请确保在法律允许的范围内使用这些资源，并遵守相关版权法规。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg overflow-hidden">
+                            <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl gradient-text">BoxPlayer</h3>
+                            <p class="text-xs text-gray-400">跨平台视频播放器</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        为用户提供最优质的影视源地址配置服务，
+                        让您的观影体验更加精彩。
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">产品</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/#features" class="hover:text-white transition-colors">功能特性</a></li>
+                        <li><a href="/#platforms" class="hover:text-white transition-colors">支持平台</a></li>
+                        <li><a href="/download" class="hover:text-white transition-colors">下载应用</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">支持</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/help" class="hover:text-white transition-colors">技术规格</a></li>
+                        <li><a href="/#faq" class="hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="mailto:support@boxplayer.app" class="hover:text-white transition-colors">联系支持</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 BoxPlayer. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <script>
+        function copyToClipboard(url, name) {
+            navigator.clipboard.writeText(url).then(() => {
+                showToast(`${name} 地址已复制到剪贴板！`);
+                // Set copied state
+                Alpine.store('clipboard').copiedId = name;
+                setTimeout(() => {
+                    Alpine.store('clipboard').copiedId = null;
+                }, 2000);
+            }).catch(err => {
+                showToast('复制失败，请手动复制！');
+                console.error('Copy failed', err);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize Alpine.js store
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('clipboard', {
+                copiedId: null
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
