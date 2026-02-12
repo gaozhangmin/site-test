@@ -3,247 +3,836 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 基本SEO元标签 -->
-    <title>使用帮助 - 小白羊BoxPlayer视频管理工具</title>
-    <meta name="description" content="小白羊BoxPlayer是一款强大的视频管理工具，支持多平台播放、云端同步等功能。本页面提供详细的使用教程和帮助文档。">
-    <meta name="keywords" content="小白羊网盘,BoxPlayer,视频管理,媒体库,视频播放器,影片管理">
-
-    <!-- Open Graph标签 -->
-    <meta property="og:title" content="小白羊BoxPlayer使用帮助">
-    <meta property="og:description" content="小白羊BoxPlayer视频管理工具使用教程和帮助文档">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="小白羊BoxPlayer">
-    <meta property="og:image" content="/images/logo/img.png">
-
-    <!-- Twitter Card标签 -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="小白羊BoxPlayer使用帮助">
-    <meta name="twitter:description" content="小白羊BoxPlayer视频管理工具使用教程和帮助文档">
-    <meta name="twitter:image" content="/images/logo/img.png">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yourdomain.com/help">
-
-    <!-- 网站图标 -->
-    <link rel="icon" type="image/png" href="/images/logo/img.png">
-    <link rel="apple-touch-icon" href="/images/logo/img.png">
-
-    <!-- 结构化数据 -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "小白羊BoxPlayer",
-            "description": "一款强大的视频管理和播放工具，支持多平台使用",
-            "operatingSystem": "iOS, Android, Windows, macOS",
-            "applicationCategory": "MultimediaApplication",
-            "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "CNY"
-            }
-        }
-    </script>
-
-    <!-- 样式表 -->
+    <title>播放器技术规格与能力 - 小白羊BoxPlayer</title>
+    <meta name="description" content="详细了解 BoxPlayer 播放器的技术规格、支持的视频格式、音频编解码器、字幕格式等专业播放能力。">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-
-    <!-- 自定义CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* 自定义滚动条 */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
+        body {
+            background: linear-gradient(135deg, #0a0f1c 0%, #162447 50%, #1f2937 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
         }
 
-        /* 自定义字体渲染 */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #06b6d4, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(6, 182, 212, 0.1);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .status-full { color: #10b981; }
+        .status-partial { color: #f59e0b; }
+        .status-none { color: #ef4444; }
+
+        .nav-link.active {
+            border-bottom: 2px solid #06b6d4;
+            color: #06b6d4;
+        }
+
+        .section-container {
+            display: block;
+        }
+
+        nav {
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .badge-pro { background: linear-gradient(45deg, #06b6d4, #3b82f6); }
+        .badge-standard { background: rgba(107, 114, 128, 0.3); }
+
+        .note-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 16px;
+            margin: 16px 0;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
-<!-- 顶部导航栏 -->
-<nav class="bg-black text-white">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between py-7">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2">
-                <img src="/images/logo/img.png" alt="小白羊网盘" class="w-6 h-6">
-                <span class="font-bold">小白羊BoxPlayer</span>
-            </div>
-            <!-- 导航链接 -->
-            <div class="hidden md:flex space-x-8">
-                <a href="/" class="hover:text-yellow-400">首页</a>
-                <a href="#" class="hover:text-yellow-400">下载</a>
-                <a href="/help" class="hover:text-yellow-400">使用帮助</a>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg overflow-hidden">
+                        <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl gradient-text">BoxPlayer</h1>
+                        <p class="text-xs text-gray-400">播放器技术规格</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="hover:text-cyan-400 transition-colors">首页</a>
+                    <a href="/#features" class="hover:text-cyan-400 transition-colors">功能</a>
+                    <a href="/#platforms" class="hover:text-cyan-400 transition-colors">平台</a>
+                    <a href="download.html" class="hover:text-cyan-400 transition-colors">下载</a>
+                    <a href="msource.html" class="hover:text-cyan-400 transition-colors">影视源地址配置</a>
+                    <a href="help.html" class="text-cyan-400">技术规格</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<main class="flex-grow">
-<div class="relative bg-gradient-to-r from-gray-900 to-gray-600 text-white py-20">
-    <div class="absolute inset-0">
-        <img src="/images/xvideo/movie_wall.jpg" alt="Help Banner" class="w-full h-full object-cover opacity-30">
-    </div>
-    <div class="relative max-w-4xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold mb-4">BoxPlayer入门教程和使用指南</h1>
+    </nav>
 
-    </div>
-</div>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">
+                <span class="gradient-text">播放器技术规格</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                BoxPlayer 提供两种播放引擎选择：专业级 KSPlayer 引擎和原生 AVKit 引擎，满足不同场景的播放需求
+            </p>
 
-
-<!-- 内容区域 -->
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-16">
-
-        <!-- 入门教程 -->
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold border-b pb-2">入门教程</h2>
-                <ul class="space-y-6">
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            BoxPlayer介绍
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            BoxPlayer安装教程
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            BoxPlayer使用指南
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold border-b pb-2">文件源</h2>
-                <ul class="space-y-6">
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            挂载网盘
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            BoxPlayer文件命名规范
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            批量修改文件名
-                        </a>
-
-                    </li>
-                </ul>
-            </div>
-            <div class="space-y-4">
-                <h2 class="text-xl font-bold border-b pb-2">媒体库</h2>
-                <ul class="space-y-6">
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            媒体库使用指南
-                        </a>
-
-                    </li>
-                    <li>
-                        <a href="{{ post.url }}" class="hover:text-green-500 flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" width="25" height="25">
-                                <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
-                            </svg>
-                            编辑影视剧元数据
-                        </a>
-
-                    </li>
-                </ul>
+            <div class="flex justify-center space-x-4 mb-8">
+                <div class="glassmorphism rounded-xl p-4">
+                    <div class="feature-badge badge-pro">KSPlayer 引擎</div>
+                    <p class="text-sm text-gray-400 mt-2">兼容性优先，功能丰富</p>
+                </div>
+                <div class="glassmorphism rounded-xl p-4">
+                    <div class="feature-badge badge-standard">AVKit 引擎</div>
+                    <p class="text-sm text-gray-400 mt-2">原生优化，性能优越</p>
+                </div>
             </div>
         </div>
-    </div>
-</main>
-<footer class="bg-gray-800 text-gray-300 py-4">
-    <div class="max-w-6xl mx-auto px-4">
-        <!-- 第一部分：顶部分栏 -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-            <!-- 左侧Logo和社交 -->
-            <div class="space-y-4">
-                <div class="flex items-center space-x-2">
-                    <img src="/images/logo/img.png" alt="小白羊BoxPlayer" class="w-8 h-8">
-                    <span class="font-bold text-lg text-white">小白羊 BoxPlayer</span>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <a href="#" class="flex items-center space-x-2 hover:text-white">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3256/3256017.png" alt="公众号" class="w-6 h-6">
-                        <span>小白羊drive</span>
-                    </a>
-                </div>
-                <!-- 微信二维码 -->
-                <div class="mt-4">
-                    <img src="/images/wechat_qr.jpg" alt="小白羊 微信二维码" class="w-20 h-20 mx-auto">
-                    <p class="text-center text-white">扫码关注</p>
-                </div>
-                <p>邮箱：<a href="mailto:vidfuion@proton.me" class="hover:text-white">BoxPlayer@proton.me</a></p>
-            </div>
+    </section>
 
-            <!-- 留空列 (使内容靠右) -->
-            <div></div>
-
-            <!-- 产品 -->
-            <div>
-                <h3 class="font-bold text-lg text-white mb-2">产品</h3>
-                <ul class="space-y-2">
-                    <li><a href="/download" class="hover:text-white">下载</a></li>
-                </ul>
-            </div>
-
-            <!-- 公司 -->
-            <div>
-                <h3 class="font-bold text-lg text-white mb-2">公司</h3>
-                <ul class="space-y-2">
-                    <li><a href="/privacy-policy" class="hover:text-white">用户协议</a></li>
-                    <li><a href="/terms-and-conditions" class="hover:text-white">隐私政策</a></li>
-                </ul>
+    <!-- Navigation Tabs -->
+    <section class="bg-black/20" x-data="{ activeTab: 'features' }">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex overflow-x-auto py-4 space-x-8">
+                <button @click="activeTab = 'features'"
+                        :class="{ 'active': activeTab === 'features' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    核心功能对比
+                </button>
+                <button @click="activeTab = 'containers'"
+                        :class="{ 'active': activeTab === 'containers' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    容器格式支持
+                </button>
+                <button @click="activeTab = 'video'"
+                        :class="{ 'active': activeTab === 'video' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    视频编解码
+                </button>
+                <button @click="activeTab = 'audio'"
+                        :class="{ 'active': activeTab === 'audio' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    音频编解码
+                </button>
+                <button @click="activeTab = 'subtitles'"
+                        :class="{ 'active': activeTab === 'subtitles' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    字幕格式
+                </button>
+                <button @click="activeTab = 'hdr'"
+                        :class="{ 'active': activeTab === 'hdr' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    HDR 支持
+                </button>
+                <button @click="activeTab = 'tracks'"
+                        :class="{ 'active': activeTab === 'tracks' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    轨道选择
+                </button>
+                <button @click="activeTab = 'misc'"
+                        :class="{ 'active': activeTab === 'misc' }"
+                        class="nav-link px-4 py-2 whitespace-nowrap hover:text-cyan-400 transition-colors">
+                    其他功能
+                </button>
             </div>
         </div>
-    </div>
-</footer>
+
+    <!-- Content Sections -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+
+            <!-- Features Comparison -->
+            <div x-show="activeTab === 'features'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">核心功能对比</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">功能特性</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">帧率匹配</td>
+                                    <td class="text-center"><span class="status-none">❌</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">原生引擎支持刷新率自动匹配</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">HDR 转 SDR 色调映射</td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-gray-400">KSPlayer 提供精确的色彩空间转换</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">播放器控制</td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-gray-400">KSPlayer 支持更多自定义选项</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">画中画</td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">两个引擎都支持 PiP 功能</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">TLS 支持</td>
+                                    <td class="text-center"><span class="status-partial">1.1, 1.2</span></td>
+                                    <td class="text-center"><span class="status-full">1.1, 1.2, 1.3</span></td>
+                                    <td class="text-gray-400">KSPlayer 不支持 TLS 1.3</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">AirPlay 音频输出</td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">KSPlayer 存在音频延迟问题</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container Support -->
+            <div x-show="activeTab === 'containers'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">容器格式支持</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">容器格式</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="font-medium">AVI</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">AVKit 支持有限</td></tr>
+                                <tr><td class="font-medium">FLV</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">M4V</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">MKV</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">MOV</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">MP4</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">MPEG-TS</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">AVKit 支持有限</td></tr>
+                                <tr><td class="font-medium">TS</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">AVKit 支持有限</td></tr>
+                                <tr><td class="font-medium">3G2</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">3GPP2 格式</td></tr>
+                                <tr><td class="font-medium">3GP</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">3GPP 格式</td></tr>
+                                <tr><td class="font-medium">WebM</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="note-box">
+                        <p><strong>注意：</strong>不支持的容器格式需要服务器端转码或重新封装才能播放。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Support -->
+            <div x-show="activeTab === 'video'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">视频编解码器支持</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">视频编解码器</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="font-medium">H.261</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">早期视频编码标准</td></tr>
+                                <tr><td class="font-medium">MPEG-4 Part 2/SP</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">支持程度因参数而异</td></tr>
+                                <tr><td class="font-medium">MPEG-4 Part 2/ASP</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">高级简单档次</td></tr>
+                                <tr><td class="font-medium">H.264 8Bit</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">H.264 10Bit</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">H.265 8Bit</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需要 A8X 以上芯片</td></tr>
+                                <tr><td class="font-medium">H.265 10Bit</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需要兼容设备</td></tr>
+                                <tr><td class="font-medium">VP9</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">AV1</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需要设备配置文件启用</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Support -->
+            <div x-show="activeTab === 'audio'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">音频编解码器支持</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">音频编解码器</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="font-medium">AAC</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">AC3</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">杜比数码</td></tr>
+                                <tr><td class="font-medium">ALAC</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">苹果无损音频</td></tr>
+                                <tr><td class="font-medium">AMR NB</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">窄带语音编码</td></tr>
+                                <tr><td class="font-medium">AMR WB</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">宽带语音编码</td></tr>
+                                <tr><td class="font-medium">EAC3</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">杜比数码 Plus</td></tr>
+                                <tr><td class="font-medium">DTS</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">FLAC</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">无损音频</td></tr>
+                                <tr><td class="font-medium">MP1</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">MPEG-1 Layer 1</td></tr>
+                                <tr><td class="font-medium">MP2</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">MPEG-1 Layer 2</td></tr>
+                                <tr><td class="font-medium">MP3</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">MLP</td><td class="text-center status-none">❌</td><td class="text-center status-none">❌</td><td class="text-gray-400">均不支持</td></tr>
+                                <tr><td class="font-medium">Nellymoser</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">Flash 音频编码</td></tr>
+                                <tr><td class="font-medium">Opus</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">PCM</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">AVKit 支持有限</td></tr>
+                                <tr><td class="font-medium">Speex</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">语音编码</td></tr>
+                                <tr><td class="font-medium">Vorbis</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">仅 KSPlayer 支持</td></tr>
+                                <tr><td class="font-medium">WavPack</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">无损音频压缩</td></tr>
+                                <tr><td class="font-medium">WMA</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">Windows 媒体音频</td></tr>
+                                <tr><td class="font-medium">WMA Lossless</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">WMA 无损版本</td></tr>
+                                <tr><td class="font-medium">WMA Pro</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">WMA 专业版</td></tr>
+                                <tr><td class="font-medium">TrueHD</td><td class="text-center status-none">❌</td><td class="text-center status-none">❌</td><td class="text-gray-400">均不支持</td></tr>
+                                <tr><td class="font-medium">DTS-HD</td><td class="text-center status-none">❌</td><td class="text-center status-none">❌</td><td class="text-gray-400">均不支持</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subtitle Support -->
+            <div x-show="activeTab === 'subtitles'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">字幕格式支持</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">字幕格式</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="font-medium">ASS</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">高级样式字幕</td></tr>
+                                <tr><td class="font-medium">CC_DEC</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">隐藏字幕</td></tr>
+                                <tr><td class="font-medium">DVBSub</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需服务器端编码</td></tr>
+                                <tr><td class="font-medium">DVDSub</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需服务器端编码</td></tr>
+                                <tr><td class="font-medium">PGSSub</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">蓝光字幕格式</td></tr>
+                                <tr><td class="font-medium">SRT</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">最常用字幕格式</td></tr>
+                                <tr><td class="font-medium">SSA</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">样式字幕格式</td></tr>
+                                <tr><td class="font-medium">Teletext</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">电视图文字幕</td></tr>
+                                <tr><td class="font-medium">TTML</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">标准化字幕</td></tr>
+                                <tr><td class="font-medium">VTT</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">Web 视频字幕</td></tr>
+                                <tr><td class="font-medium">XSub</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">需服务器端编码</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="note-box">
+                        <p><strong>注意：</strong>AVKit 引擎目前不支持字幕轨道选择，这是由于 HLS 文件不兼容问题导致的。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HDR Support -->
+            <div x-show="activeTab === 'hdr'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">HDR 格式支持</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">HDR 格式</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td class="font-medium">HDR10</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">标准 HDR 格式</td></tr>
+                                <tr><td class="font-medium">HDR10+</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">KSPlayer 完全支持动态元数据</td></tr>
+                                <tr><td class="font-medium">杜比视界 Profile 5</td><td class="text-center status-full">✅</td><td class="text-center status-full">✅</td><td class="text-gray-400">完全支持</td></tr>
+                                <tr><td class="font-medium">杜比视界 Profile 8</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">KSPlayer 完全支持</td></tr>
+                                <tr><td class="font-medium">杜比视界 Profile 10</td><td class="text-center status-full">✅</td><td class="text-center status-partial">🔶</td><td class="text-gray-400">KSPlayer 完全支持</td></tr>
+                                <tr><td class="font-medium">HLG</td><td class="text-center status-full">✅</td><td class="text-center status-none">❌</td><td class="text-gray-400">KSPlayer 支持 HLG</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="note-box">
+                        <p><strong>重要提示：</strong>KSPlayer 完全支持原生 HDR 播放，包括所有杜比视界配置文件和 HLG 格式，提供最佳的 HDR 观影体验。AVKit 在某些 HDR 格式上支持有限，建议使用 KSPlayer 引擎获得完整的 HDR 支持。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track Selection -->
+            <div x-show="activeTab === 'tracks'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8 mb-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">轨道选择兼容性</h2>
+                    <p class="text-gray-300 mb-8">BoxPlayer 的轨道选择功能受各播放引擎兼容性限制，以下是基于测试的结果：</p>
+
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="glassmorphism rounded-xl p-4 text-center">
+                            <span class="status-full text-2xl">✅</span>
+                            <p class="text-sm text-gray-300 mt-2">正常工作</p>
+                        </div>
+                        <div class="glassmorphism rounded-xl p-4 text-center">
+                            <span class="status-partial text-2xl">🔶</span>
+                            <p class="text-sm text-gray-300 mt-2">部分功能受限</p>
+                        </div>
+                        <div class="glassmorphism rounded-xl p-4 text-center">
+                            <span class="status-none text-2xl">❌</span>
+                            <p class="text-sm text-gray-300 mt-2">不工作</p>
+                        </div>
+                    </div>
+
+                    <!-- KSPlayer Player Track Selection -->
+                    <h3 class="text-2xl font-bold mb-4">KSPlayer 播放引擎</h3>
+                    <div class="table-container mb-8">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">文件配置</th>
+                                    <th class="text-center">直接播放</th>
+                                    <th class="text-center">转码播放</th>
+                                    <th class="text-left">备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">内嵌音频</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-gray-400">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">内嵌音频 + 内嵌字幕</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-gray-400">非外部字幕格式(DVDSUB)不工作</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">内嵌音频 + 外部字幕</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-gray-400">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">多音轨 + 多内嵌字幕</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-gray-400">非外部字幕格式(DVDSUB)不工作</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">多音轨 + 多外部字幕</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-gray-400">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">外部音轨 + 内嵌音轨 + 外部字幕</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-gray-400">需要转码时无法播放外部音轨</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- AVKit Player Track Selection -->
+                    <h3 class="text-2xl font-bold mb-4">AVKit 播放引擎</h3>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">文件配置</th>
+                                    <th class="text-center">直接播放</th>
+                                    <th class="text-center">转码播放</th>
+                                    <th class="text-left">备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">内嵌音频</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-center status-full">✅</td>
+                                    <td class="text-gray-400">-</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">内嵌音频 + 内嵌字幕</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-center status-none">❌</td>
+                                    <td class="text-gray-400">播放默认音轨，无法选择字幕</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">内嵌音频 + 外部字幕</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-center status-none">❌</td>
+                                    <td class="text-gray-400">播放默认音轨，无法选择字幕</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">多音轨 + 多内嵌字幕</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-center status-none">❌</td>
+                                    <td class="text-gray-400">播放默认音轨，无法选择字幕</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">多音轨 + 多外部字幕</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-center status-none">❌</td>
+                                    <td class="text-gray-400">播放默认音轨，无法选择字幕</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">外部音轨 + 内嵌音轨 + 外部字幕</td>
+                                    <td class="text-center status-partial">🔶</td>
+                                    <td class="text-center status-none">❌</td>
+                                    <td class="text-gray-400">播放默认音轨，无法选择字幕</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="note-box">
+                        <p><strong>重要说明：</strong>AVKit 引擎目前在音轨和字幕选择方面功能有限，主要是由于 HLS 文件兼容性问题导致的。对于需要精确控制音轨和字幕的用户，建议使用 KSPlayer 引擎。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miscellaneous Features -->
+            <div x-show="activeTab === 'misc'" class="section-container">
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h2 class="text-3xl font-bold mb-6 gradient-text">其他功能对比</h2>
+                    <div class="table-container">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr>
+                                    <th class="text-left">功能特性</th>
+                                    <th class="text-center">KSPlayer 引擎</th>
+                                    <th class="text-center">AVKit 引擎</th>
+                                    <th class="text-left">说明</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-medium">外部显示器支持</td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">KSPlayer 只能镜像显示，保持源设备尺寸</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">能耗控制</td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">KSPlayer 使用软件解码器会增加功耗</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">系统集成</td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">AVKit 与 iOS/tvOS 系统集成更好</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">硬件加速</td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-gray-400">AVKit 更好地利用硬件解码器</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">自定义UI</td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-gray-400">KSPlayer 提供更多自定义选项</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">播放控制精度</td>
+                                    <td class="text-center"><span class="status-full">✅</span></td>
+                                    <td class="text-center"><span class="status-partial">🔶</span></td>
+                                    <td class="text-gray-400">KSPlayer 支持更精细的播放控制</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mt-8">
+                        <!-- KSPlayer Advantages -->
+                        <div class="glassmorphism rounded-xl p-6">
+                            <h3 class="text-xl font-bold mb-4 text-green-400">KSPlayer 引擎优势</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-400 mr-2 mt-0.5"></i>
+                                    最广泛的格式兼容性
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-400 mr-2 mt-0.5"></i>
+                                    完整的字幕和音轨控制
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-400 mr-2 mt-0.5"></i>
+                                    丰富的播放器自定义选项
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-400 mr-2 mt-0.5"></i>
+                                    支持更多音频和视频编解码器
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-green-400 mr-2 mt-0.5"></i>
+                                    完整的HDR支持包括所有杜比视界格式
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- AVKit Advantages -->
+                        <div class="glassmorphism rounded-xl p-6">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">AVKit 引擎优势</h3>
+                            <ul class="space-y-2 text-sm text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-blue-400 mr-2 mt-0.5"></i>
+                                    更低的功耗和更好的性能
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-blue-400 mr-2 mt-0.5"></i>
+                                    原生 HDR 和杜比视界支持
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-blue-400 mr-2 mt-0.5"></i>
+                                    系统级功能集成（PiP、AirPlay）
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plus-circle text-blue-400 mr-2 mt-0.5"></i>
+                                    更好的外部显示器支持
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="note-box">
+                        <p><strong>选择建议：</strong>如果您主要播放标准格式的视频文件，注重系统集成和节能，建议选择 AVKit 引擎。如果您需要播放各种格式的文件，需要完整的HDR支持，或需要精确控制播放参数，建议选择 KSPlayer 引擎。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </section>
+
+    <!-- Features Highlight -->
+    <section class="py-16 bg-black/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 gradient-text">播放器引擎选择建议</h2>
+                <p class="text-gray-400 text-lg">根据您的使用场景选择最适合的播放引擎</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- KSPlayer Engine -->
+                <div class="glassmorphism rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-badge badge-pro mr-3">推荐</div>
+                        <h3 class="text-2xl font-bold">KSPlayer 引擎</h3>
+                    </div>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">最佳兼容性</p>
+                                <p class="text-sm text-gray-400">支持更多容器格式和编解码器</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">丰富控制选项</p>
+                                <p class="text-sm text-gray-400">速度调节、宽高比、章节支持、字幕和音轨选择</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">画中画支持</p>
+                                <p class="text-sm text-gray-400">支持画中画播放，多任务观影更便捷</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">完整HDR支持</p>
+                                <p class="text-sm text-gray-400">支持所有HDR格式包括杜比视界和HLG</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">字幕支持完整</p>
+                                <p class="text-sm text-gray-400">支持 SRT、ASS、SSA 等多种字幕格式</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-400">
+                        <strong>适用场景：</strong>需要播放各种格式视频文件，对兼容性要求高的用户
+                    </p>
+                </div>
+
+                <!-- AVKit Engine -->
+                <div class="glassmorphism rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="feature-badge badge-standard mr-3">原生</div>
+                        <h3 class="text-2xl font-bold">AVKit 引擎</h3>
+                    </div>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">原生优化</p>
+                                <p class="text-sm text-gray-400">更低功耗，更好的系统集成</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">HDR 支持</p>
+                                <p class="text-sm text-gray-400">杜比视界、HDR10 原生支持</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">系统功能</p>
+                                <p class="text-sm text-gray-400">帧率匹配、更好的 AirPlay 集成</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-400">
+                        <strong>适用场景：</strong>主要播放标准格式，注重系统集成和 HDR 体验的用户
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/40 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg overflow-hidden">
+                            <img src="png/icon/blue.svg" alt="BoxPlayer Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-xl gradient-text">BoxPlayer</h3>
+                            <p class="text-xs text-gray-400">跨平台视频播放器</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        专业级播放引擎，为您提供最佳的跨平台视频播放体验。
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">产品</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/" class="hover:text-white transition-colors">主页</a></li>
+                        <li><a href="/#features" class="hover:text-white transition-colors">功能特性</a></li>
+                        <li><a href="download.html" class="hover:text-white transition-colors">下载应用</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">技术支持</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="help.html" class="hover:text-white transition-colors">技术规格</a></li>
+                        <li><a href="/#faq" class="hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="mailto:support@boxplayer.app" class="hover:text-white transition-colors">联系支持</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 BoxPlayer. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
