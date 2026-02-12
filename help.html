@@ -3,11 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>播放器技术规格与能力 - 小白羊BoxPlayer</title>
-    <meta name="description" content="详细了解 BoxPlayer 播放器的技术规格、支持的视频格式、音频编解码器、字幕格式等专业播放能力。">
+    <meta name="description" content="BoxPlayer播放器技术规格详解：KSPlayer与AVKit引擎对比，支持格式、HDR、音视频编解码器、字幕格式完整技术文档。">
+    <meta name="keywords" content="BoxPlayer技术规格, 播放器引擎对比, KSPlayer, AVKit, HDR支持, 视频编解码器, 音频格式, 字幕支持">
+    <meta name="author" content="BoxPlayer Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xbysite.pages.dev/help.html">
+    <meta property="og:title" content="BoxPlayer技术规格 - 播放器引擎与格式支持">
+    <meta property="og:description" content="详细了解BoxPlayer的技术规格，包括KSPlayer与AVKit引擎对比、支持的视频音频格式、HDR技术支持">
+    <meta property="og:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+    <meta property="og:site_name" content="BoxPlayer">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xbysite.pages.dev/help.html">
+    <meta property="twitter:title" content="BoxPlayer技术规格 - 播放器引擎与格式支持">
+    <meta property="twitter:description" content="详细了解BoxPlayer的技术规格和格式支持">
+    <meta property="twitter:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xbysite.pages.dev/help.html">
+
+    <title>BoxPlayer技术规格 - 播放器引擎对比与格式支持</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Technical Documentation Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "BoxPlayer播放器技术规格与引擎对比",
+        "description": "详细介绍BoxPlayer的KSPlayer与AVKit引擎技术规格，包括支持的视频音频格式、HDR技术、字幕支持等",
+        "author": {
+            "@type": "Organization",
+            "name": "BoxPlayer Team"
+        },
+        "datePublished": "2026-02-12",
+        "dateModified": "2026-02-12",
+        "publisher": {
+            "@type": "Organization",
+            "name": "BoxPlayer Team"
+        },
+        "mainEntity": {
+            "@type": "SoftwareApplication",
+            "name": "BoxPlayer",
+            "applicationCategory": "MultimediaApplication"
+        }
+    }
+    </script>
+
+    <!-- Comparison Table Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ComparisonTable",
+        "name": "KSPlayer vs AVKit 引擎对比",
+        "description": "BoxPlayer两种播放引擎的详细功能对比",
+        "compareProduct": [
+            {
+                "@type": "Product",
+                "name": "KSPlayer引擎",
+                "description": "兼容性优先，功能丰富的播放引擎"
+            },
+            {
+                "@type": "Product",
+                "name": "AVKit引擎",
+                "description": "原生优化，性能优越的播放引擎"
+            }
+        ]
+    }
+    </script>
     <style>
         body {
             background: linear-gradient(135deg, #0a0f1c 0%, #162447 50%, #1f2937 100%);
@@ -124,6 +193,23 @@
 
     <!-- Hero Section -->
     <section class="pt-32 pb-16 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
+        <!-- Breadcrumb -->
+        <nav class="absolute top-24 left-4 md:left-8" aria-label="breadcrumb">
+            <ol class="flex space-x-2 text-sm text-gray-400" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" class="hover:text-cyan-400 transition-colors" itemprop="item">
+                        <span itemprop="name">首页</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-500">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="text-cyan-400" itemprop="name">技术规格</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+
         <div class="max-w-6xl mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold mb-6">
                 <span class="gradient-text">播放器技术规格</span>

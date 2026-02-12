@@ -3,4 +3,22 @@ layout: null
 sitemap: false
 ---
 User-agent: *
-Sitemap: {{ site.url }}/sitemap.xml
+Allow: /
+
+# Sitemap
+Sitemap: https://xbysite.pages.dev/sitemap.xml
+
+# Crawl-delay for courtesy
+Crawl-delay: 1
+
+# Disallow certain paths
+Disallow: /_includes/
+Disallow: /_layouts/
+Disallow: /assets/temp/
+Disallow: *.json$
+
+# Allow important resources
+Allow: /css/
+Allow: /js/
+Allow: /png/
+Allow: /images/

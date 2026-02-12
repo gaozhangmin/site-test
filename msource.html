@@ -11,12 +11,110 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="获取小白羊TV影视源地址，支持设置中指定源，所有影视源均从公开网络收集，本站不参与开发和维护。">
-    <meta name="keywords" content="影视源, 影视源地址, 小白羊TV, 观影接口, 影视资源">
-    <title>影视源地址配置 - BoxPlayer</title>
+    <meta name="description" content="获取小白羊TV影视源地址配置，一键复制影视源接口，支持多种影视资源平台。所有源均来自公开网络，合法合规使用。">
+    <meta name="keywords" content="影视源地址, 小白羊TV配置, 影视源接口, BoxPlayer影视源, TV盒子源, 影视资源配置, 播放器源地址">
+    <meta name="author" content="BoxPlayer Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xbysite.pages.dev/msource.html">
+    <meta property="og:title" content="影视源地址配置 - BoxPlayer">
+    <meta property="og:description" content="获取最新影视源地址，一键复制配置到小白羊TV，支持多种影视资源平台">
+    <meta property="og:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+    <meta property="og:site_name" content="BoxPlayer">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xbysite.pages.dev/msource.html">
+    <meta property="twitter:title" content="影视源地址配置 - BoxPlayer">
+    <meta property="twitter:description" content="获取最新影视源地址，一键复制配置">
+    <meta property="twitter:image" content="https://xbysite.pages.dev/png/icon/blue.svg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://xbysite.pages.dev/msource.html">
+
+    <title>影视源地址配置 - BoxPlayer小白羊TV源接口</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "影视源地址配置工具",
+        "description": "为小白羊TV配置影视源地址的在线工具，一键复制影视源接口",
+        "url": "https://xbysite.pages.dev/msource.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "featureList": [
+            "一键复制影视源地址",
+            "多种影视源支持",
+            "简单易用的界面",
+            "实时状态显示"
+        ]
+    }
+    </script>
+
+    <!-- HowTo Schema for configuration -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "如何配置影视源地址",
+        "description": "详细指导如何复制和配置小白羊TV的影视源地址",
+        "totalTime": "PT2M",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "复制地址",
+                "text": "点击任意影视源卡片复制地址到剪贴板"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "打开设置",
+                "text": "在小白羊TV应用中进入设置页面"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "粘贴使用",
+                "text": "粘贴地址到接口配置中即可生效"
+            }
+        ]
+    }
+    </script>
+
+    <!-- ItemList Schema for sources -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "影视源地址列表",
+        "description": "可用的影视源地址配置选项",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "饭太硬",
+                "description": "优质影视资源平台"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "GitHub源",
+                "description": "开源影视资源接口"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "肥猫",
+                "description": "知名影视资源站"
+            }
+        ]
+    }
+    </script>
     <style>
         body {
             background: linear-gradient(135deg, #0a0f1c 0%, #162447 50%, #1f2937 100%);
@@ -178,6 +276,23 @@
 
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center hero-gradient pt-20">
+        <!-- Breadcrumb -->
+        <nav class="absolute top-24 left-4 md:left-8" aria-label="breadcrumb">
+            <ol class="flex space-x-2 text-sm text-gray-400" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="/" class="hover:text-cyan-400 transition-colors" itemprop="item">
+                        <span itemprop="name">首页</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                <li class="text-gray-500">/</li>
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <span class="text-cyan-400" itemprop="name">影视源地址配置</span>
+                    <meta itemprop="position" content="2" />
+                </li>
+            </ol>
+        </nav>
+
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h1 class="text-6xl font-bold mb-6">
